@@ -66,7 +66,7 @@ const NavBar = () => {
                 ))}
               </Stack>
             </Hidden>
-
+            {/* 
             <Box
               sx={{
                 display: "flex",
@@ -80,7 +80,7 @@ const NavBar = () => {
                   inputProps={{ "aria-label": "toggle theme" }}
                 />
               </Hidden>
-            </Box>
+            </Box> */}
           </Toolbar>
         </Container>
       </AppBar>
@@ -109,13 +109,13 @@ const NavBar = () => {
             </ListItem>
           ))}
         </List>
-        <Box className="drawer-theme-switch">
+        {/* <Box className="drawer-theme-switch">
           <Switch
             checked={theme === "dark"}
             onChange={toggleTheme}
             aria-label="toggle theme"
           />
-        </Box>
+        </Box> */}
       </Drawer>
     </React.Fragment>
   );

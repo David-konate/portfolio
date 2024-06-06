@@ -146,3 +146,63 @@ span {
     }
   }
 }
+
+.bio {
+  .imodji {
+  }
+}
+
+// Styles pour la liste d'intérêts
+.interest-list {
+  padding: 20px;
+  background-color: var(--theme-primary-color-back);
+}
+
+// Styles pour les conteneurs d'images
+.interest-image-container {
+  flex-direction: column;
+  padding: 10px;
+}
+
+// Styles pour les images
+.interest-image {
+  border: 2px solid var(--theme-primary-color);
+  transition: transform 0.3s ease;
+  width: 400px;
+  height: 200px;
+  border-radius: 5px;
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  /* Media query for screens 768px and smaller */
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 100px;
+  }
+}
+
+// Styles pour les titres
+.interest-title {
+  margin-bottom: 10px;
+  color: var(--theme-text-color);
+  text-align: center;
+}
+
+// Styles pour les dialogues
+.interest-dialog {
+  .dialog-title {
+    background-color: var(--theme-primary-color);
+    color: white;
+  }
+
+  .dialog-content {
+    background-color: white;
+    color: var(--theme-text-color);
+  }
+
+  .dialog-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
