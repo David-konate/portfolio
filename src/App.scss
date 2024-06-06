@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Fira+Mono&display=swap");
+
+:root {
+  --theme-primary-color: #4d5bce;
+  --theme-secondary-color: #43d9ad;
+  --theme-link-color: #e99287;
+  --theme-primary-color-back: #011627;
+  --theme-text-color: #fff;
+  --theme-text-color-com: #8f8c8c;
+  --theme-background-color: #43d9ad;
+}
+
+body {
+  background-image: url("./assets/bg-port.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom; /* Position image at center bottom */
+  min-height: 100vh; /* Set minimum height to viewport height */
+  margin: 0; /* Remove any default margins */
+  display: flex; /* Enable flexbox for content positioning */
+  flex-direction: column; /* Stack content vertically */
+  color: var(--theme-text-color);
+  &.dark {
+  }
+}
+
+/* Appliquer Montserrat aux titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Appliquer Fira Mono au reste du texte */
+body,
+p,
+a,
+li,
+span {
+  font-family: "Fira Mono", monospace;
+}
+
+.navBar {
+  top: 0;
+  background-color: transparent;
+  .no-logo {
+    cursor: pointer;
+  }
+}
+.footer {
+  background-color: transparent;
+}
+.comment {
+  color: var(--theme-text-color-com);
+}
+.home {
+  display: flex;
+  justify-content: space-between;
+  .left-text {
+    .title-chevron {
+      color: var(--theme-primary-color);
+      font-weight: bold;
+    }
+    .comment {
+      color: var(--theme-text-color-com);
+    }
+    .const {
+      color: var(--theme-primary-color);
+    }
+    .name-const {
+      color: var(--theme-secondary-color);
+    }
+    .link {
+      color: var(--theme-link-color);
+    }
+    .link:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// Définir l'animation de frappe
+@keyframes typing {
+  from {
+    width: 0; // Commencer avec une largeur de texte de 0
+  }
+  to {
+    width: 100%; // Augmenter progressivement la largeur du texte jusqu'à 100%
+  }
+}
+
+// Appliquer l'animation aux éléments avec la classe "typing-animation"
+.typing-animation {
+  overflow: hidden; // Cacher le texte qui déborde
+  white-space: nowrap; // Empêcher le texte de passer à la ligne
+  animation: typing 2s steps(40, end); // Utiliser l'animation "typing" avec une durée de 2 secondes
+}
+
+.snake-dot {
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background-color: green;
+}
+.snake-food {
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background-color: red;
+}
+
+.game-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; // Aligner au début de la boîte parente
+  margin-top: 20px; // Ajout de marge en haut pour aligner avec le plateau de jeu
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.103); // Blanc semi-transparent
+  border: 1px solid black;
+  box-shadow: 0px 4px 8px var(--theme-primary-color-back);
+  .plateau {
+    width: 500px; // Ajustement de la largeur du plateau à 500px
+    height: 500px; // Ajustement de la hauteur du plateau à 500px
+    border-radius: 10px;
+    background-color: var(--theme-primary-color-back);
+    box-shadow: 0px 4px 8px var(--theme-primary-color-back);
+    position: relative;
+    border: 2px solid black;
+    .game-over {
+      border: 1px solid var(--theme-link-color);
+      box-shadow: 0px 4px 8px red;
+      background-color: var(--theme-link-color);
+      .title-go {
+        color: rgb(163, 1, 1);
+        font-weight: bold;
+      }
+      .score-go {
+        color: rgb(163, 1, 1);
+      }
+      .divider-go {
+        color: rgb(163, 1, 1);
+      }
+    }
+  }
+}
