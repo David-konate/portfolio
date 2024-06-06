@@ -15,10 +15,8 @@ import {
 } from "@mui/material/";
 import { NavLink, useNavigate } from "react-router-dom";
 import { links } from "../utils";
-import { useTheme } from "../context/ThemeContext";
 
 const NavBar = () => {
-  const { theme, toggleTheme } = useTheme();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleDrawerOpen = () => {
@@ -40,7 +38,7 @@ const NavBar = () => {
         <Container maxWidth={"xl"}>
           <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
             <Hidden smDown>
-              <Box className="no-logo" onClick={navigate(`/`)}>
+              <Box className="no-logo" onClick={() => navigate(`/`)}>
                 {" "}
                 <Typography>David Konaté</Typography>
               </Box>
@@ -66,21 +64,6 @@ const NavBar = () => {
                 ))}
               </Stack>
             </Hidden>
-            {/* 
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <Hidden smDown>
-                <Switch
-                  checked={theme === "dark"}
-                  onChange={toggleTheme}
-                  inputProps={{ "aria-label": "toggle theme" }}
-                />
-              </Hidden>
-            </Box> */}
           </Toolbar>
         </Container>
       </AppBar>
@@ -109,13 +92,6 @@ const NavBar = () => {
             </ListItem>
           ))}
         </List>
-        {/* <Box className="drawer-theme-switch">
-          <Switch
-            checked={theme === "dark"}
-            onChange={toggleTheme}
-            aria-label="toggle theme"
-          />
-        </Box> */}
       </Drawer>
     </React.Fragment>
   );

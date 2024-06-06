@@ -9,16 +9,12 @@ export const BASE_URL_API = process.env.REACT_APP_BASE_URL_API;
 
 export const links = [
   {
-    label: "Home",
+    label: "_Home",
     path: "/",
   },
   {
-    label: "test",
-    path: "/",
-  },
-  {
-    label: "test1",
-    path: "/",
+    label: "_About-me",
+    path: "/about-me",
   },
 ];
 

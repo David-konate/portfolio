@@ -17,6 +17,7 @@ import {
 const Interest = () => {
   const [open, setOpen] = useState(false);
   const [dialogContent, setDialogContent] = useState("");
+  const [dialogTitle, setDialogTitle] = useState(""); // State to hold the dialog title
 
   const images = [
     {
@@ -51,7 +52,9 @@ const Interest = () => {
     },
   ];
 
-  const handleClickOpen = (text) => {
+  const handleClickOpen = (title, text) => {
+    // Pass both title and text to the handler
+    setDialogTitle(title); // Set the dialog title
     setDialogContent(text);
     setOpen(true);
   };
@@ -69,14 +72,14 @@ const Interest = () => {
               .slice(0, Math.ceil(images.length / 2))
               .map((image, index) => (
                 <Grid item key={index} className="interest-image-container">
-                  <Typography variant="h6" className="interest-title">
+                  <Typography mb={1} variant="h6" className="interest-title">
                     {image.title}
                   </Typography>
                   <img
                     className="interest-image"
                     src={image.src}
                     alt={`Intérêt ${index + 1}`}
-                    onClick={() => handleClickOpen(image.text)}
+                    onClick={() => handleClickOpen(image.title, image.text)} // Pass title and text to the handler
                     style={{ cursor: "pointer" }}
                   />
                 </Grid>
@@ -87,14 +90,14 @@ const Interest = () => {
           <Grid container direction="column" spacing={3}>
             {images.slice(Math.ceil(images.length / 2)).map((image, index) => (
               <Grid item key={index} className="interest-image-container">
-                <Typography variant="h6" className="interest-title">
+                <Typography mb={1} variant="h6" className="interest-title">
                   {image.title}
                 </Typography>
                 <img
                   className="interest-image"
                   src={image.src}
                   alt={`Intérêt ${index + 1}`}
-                  onClick={() => handleClickOpen(image.text)}
+                  onClick={() => handleClickOpen(image.title, image.text)} // Pass title and text to the handler
                   style={{ cursor: "pointer" }}
                 />
               </Grid>
@@ -109,7 +112,7 @@ const Interest = () => {
         className="interest-dialog"
       >
         <DialogTitle id="dialog-title" className="dialog-title">
-          Image Description
+          {dialogTitle} {/* Render the dialog title */}
         </DialogTitle>
         <DialogContent className="dialog-content">
           <DialogContentText className="dialog-text">
