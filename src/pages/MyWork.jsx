@@ -35,36 +35,33 @@ const MyWork = () => {
           <Typography
             variant="h6"
             component="div"
-            sx={{ marginBottom: "10px" }}
+            sx={{ marginBottom: "10px" }} // Ajoutez le style cursor pointer
           >
             Mon Travail
           </Typography>
           <List>
             <ListItem selected={selectedComponent === <Technologies />}>
-              {" "}
-              {/* Highlight Technologies */}
               <ListItemText
                 className="my-list-text"
                 primary="Technologies"
                 onClick={() => handleComponentChange(<Technologies />)}
+                style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
               />
             </ListItem>
             <ListItem selected={selectedComponent === <Developer />}>
-              {" "}
-              {/* Highlight Developer */}
               <ListItemText
                 className="my-list-text"
                 primary="Développeur"
                 onClick={() => handleComponentChange(<Developer />)}
+                style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
               />
             </ListItem>
             <ListItem selected={selectedComponent === <AppDesigner />}>
-              {" "}
-              {/* Highlight AppDesigner */}
               <ListItemText
                 className="my-list-text"
                 primary="Concepteur Développeur"
                 onClick={() => handleComponentChange(<AppDesigner />)}
+                style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
               />
             </ListItem>
           </List>

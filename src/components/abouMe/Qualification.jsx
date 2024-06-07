@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -17,7 +17,7 @@ import devApp from "../../assets/conception.jpg";
 const Qualification = () => {
   const [open, setOpen] = useState(false);
   const [dialogContent, setDialogContent] = useState("");
-  const [dialogTitle, setDialogTitle] = useState(""); // State to hold the dialog title
+  const [dialogTitle, setDialogTitle] = useState("");
 
   const qualifications = [
     { src: bacStg, title: "BAC STG", text: "Description pour BAC STG." },
@@ -33,6 +33,14 @@ const Qualification = () => {
       text: "Description pour Concepteur Développeur d'Application.",
     },
   ];
+
+  useEffect(() => {
+    // Ajoutez la classe 'zoom-in' à chaque image après le rendu
+    const images = document.querySelectorAll(".interest-image");
+    images.forEach((image) => {
+      image.classList.add("zoom-in");
+    });
+  }, []); // Assurez-vous de ne lancer cet effet qu'une seule fois après le premier rendu
 
   const handleClickOpen = (title, text) => {
     setDialogTitle(title); // Set the dialog title
@@ -66,7 +74,7 @@ const Qualification = () => {
                   handleClickOpen(qualification.title, qualification.text)
                 }
                 style={{ cursor: "pointer" }}
-                className="interest-image" // Utilisez la même classe que dans le composant Interest
+                className="interest-image zoom-in" // Utilisez la même classe que dans le composant Interest
               />
             </Grid>
           </Grid>

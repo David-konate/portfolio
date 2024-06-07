@@ -101,16 +101,6 @@ span {
   }
 }
 
-// Définir l'animation de frappe
-@keyframes typing {
-  from {
-    width: 0; // Commencer avec une largeur de texte de 0
-  }
-  to {
-    width: 100%; // Augmenter progressivement la largeur du texte jusqu'à 100%
-  }
-}
-
 // Appliquer l'animation aux éléments avec la classe "typing-animation"
 .typing-animation {
   overflow: hidden; // Cacher le texte qui déborde
@@ -184,8 +174,8 @@ span {
 .interest-image {
   border: 2px solid var(--theme-primary-color);
   transition: transform 0.3s ease;
-  width: 400px;
-  height: 200px;
+  width: 300px;
+  height: 150px;
   border-radius: 5px;
   &:hover {
     transform: scale(1.05);
@@ -220,5 +210,79 @@ span {
   .dialog-text {
     font-size: 16px;
     line-height: 1.5;
+  }
+}
+
+.box-image-projet {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; // Centrer la boîte dans la grille
+}
+
+.box-image-projet {
+  width: 300px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; // Centrer la boîte dans la grille
+}
+.developer-grid {
+  background-color: var(--theme-primary-color-back);
+}
+.image-projet {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid var(--theme-primary-color);
+  transition: transform 0.3s ease;
+  border-radius: 5px;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+// EFFETS
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.zoom-in {
+  animation: zoomIn 0.5s ease-out; /* Durée de l'animation */
+}
+
+// Définir l'animation de frappe
+@keyframes typing {
+  from {
+    width: 0; // Commencer avec une largeur de texte de 0
+  }
+  to {
+    width: 100%; // Augmenter progressivement la largeur du texte jusqu'à 100%
   }
 }

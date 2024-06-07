@@ -34,27 +34,36 @@ const AboutMeMenu = () => {
           <Typography
             variant="h6"
             component="div"
-            sx={{ marginBottom: "10px" }}
+            sx={{
+              marginBottom: "10px",
+              // Ajoutez le style cursor pointer
+            }}
           >
             Qui suis-je?
           </Typography>
           <List>
             <ListItem selected={selectedComponent === <Bio />}>
-              {" "}
-              {/* Highlight Bio */}
               <ListItemText
                 className="my-list-text"
                 primary="Bio"
                 onClick={() => handleComponentChange(<Bio />)}
+                style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
               />
             </ListItem>
             <ListItem onClick={() => handleComponentChange(<Interest />)}>
-              <ListItemText className="my-list-text" primary="Intérêts" />
+              <ListItemText
+                className="my-list-text"
+                primary="Intérêts"
+                style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
+              />
             </ListItem>
             <ListItem onClick={() => handleComponentChange(<Qualification />)}>
-              <ListItemText className="my-list-text" primary="Qualifications" />
+              <ListItemText
+                className="my-list-text"
+                primary="Qualifications"
+                style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
+              />
             </ListItem>
-            {/* Add more menu items as needed */}
           </List>
         </Box>
 

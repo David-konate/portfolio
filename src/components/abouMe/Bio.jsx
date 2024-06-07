@@ -3,12 +3,9 @@ import { Box, Container, Typography } from "@mui/material";
 import laptopImage from "../../assets/laptop.png";
 
 const Bio = () => {
-  // Set the image path correctly, relative to the component's location
-  const imagePath = "../"; // Adjust if needed
-
   return (
     <Container>
-      <Box display="grid" gap={2}>
+      <Box display="grid" gap={2} className="slide-in">
         <Box>
           <img
             width={"400px"}
