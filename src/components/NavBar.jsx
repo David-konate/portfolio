@@ -4,7 +4,6 @@ import {
   Container,
   Box,
   Toolbar,
-  Switch,
   Hidden,
   Drawer,
   List,
@@ -82,6 +81,7 @@ const NavBar = () => {
             >
               <NavLink to={link.path} className="drawer-link">
                 <ListItemText
+                  className="my-list-text"
                   sx={{ padding: 1 }}
                   className="drawer-text"
                   primary={

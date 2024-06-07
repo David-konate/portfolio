@@ -43,6 +43,25 @@ span {
   font-family: "Fira Mono", monospace;
 }
 
+.MuiListItemText-root {
+  font-size: 0.875rem; // Default font size
+}
+
+// Optionally, customize font size for specific elements within ListItemText className="my-list-text"
+.MuiListItemText-root span {
+  font-size: 0.875rem;
+}
+
+.MuiListItemText-root p {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 720px) {
+  .my-list-text {
+    font-size: 0.7rem;
+  }
+}
+
 .navBar {
   top: 0;
   background-color: transparent;
@@ -103,13 +122,15 @@ span {
   position: absolute;
   width: 2%;
   height: 2%;
-  background-color: green;
+  background-color: var(--theme-primary-color);
+  border-radius: 20%;
 }
 .snake-food {
   position: absolute;
   width: 2%;
   height: 2%;
-  background-color: red;
+  background-color: var(--theme-secondary-color);
+  border-radius: 5%; /* arrondit les coins pour former un cercle */
 }
 
 .game-area {
@@ -144,11 +165,6 @@ span {
         color: rgb(163, 1, 1);
       }
     }
-  }
-}
-
-.bio {
-  .imodji {
   }
 }
 

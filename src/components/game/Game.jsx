@@ -6,7 +6,7 @@ import { Box, Button, Divider, Grid, Typography } from "@mui/material";
 // Fonction pour obtenir des coordonnées aléatoires pour la nourriture
 const getRandomCoordinates = () => {
   let min = 1;
-  let max = 59;
+  let max = 49;
   let x = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   let y = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   return [x, y];
@@ -22,7 +22,7 @@ const Game = () => {
   const [gameOver, setGameOver] = useState(false);
   // Direction du serpent et vitesse
   const [direction, setDirection] = useState("RIGHT");
-  const [speed, setSpeed] = useState(250); // Augmenter la valeur de speed pour ralentir le serpent
+  const [speed, setSpeed] = useState(200); // Augmenter la valeur de speed pour ralentir le serpent
   const [gameStarted, setGameStarted] = useState(false);
 
   // Effet pour écouter les touches du clavier
@@ -193,10 +193,10 @@ const Game = () => {
                 <Typography className="title-go" variant="h4">
                   Game Over
                 </Typography>
-                <Divider className="divider-go" sx={{ mt: 2 }} />
+                {/* <Divider className="divider-go" sx={{ mt: 2 }} />
                 <Typography className="score-go" mt={4} variant="subtitle1">
                   Longueur : {snakeDots.length}
-                </Typography>
+                </Typography> */}
               </Box>
             )}
           </Box>
