@@ -38,9 +38,34 @@ h6 {
 body,
 p,
 a,
-li,
 span {
   font-family: "Fira Mono", monospace;
+}
+li {
+  font-family: "Fira Mono", monospace;
+  margin-bottom: 10px; /* Ajustez cette valeur selon l'espace souhaité */
+  font-size: 1.1rem; /* Ajustez cette valeur selon la taille de police souhaitée */
+  letter-spacing: 0.5px; /* Ajustez cette valeur selon l'espacement souhaité */
+}
+/* Width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--theme-link-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--theme-primary-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-primary-color-back);
 }
 
 .MuiListItemText-root {
@@ -99,13 +124,6 @@ span {
       cursor: pointer;
     }
   }
-}
-
-// Appliquer l'animation aux éléments avec la classe "typing-animation"
-.typing-animation {
-  overflow: hidden; // Cacher le texte qui déborde
-  white-space: nowrap; // Empêcher le texte de passer à la ligne
-  animation: typing 2s steps(40, end); // Utiliser l'animation "typing" avec une durée de 2 secondes
 }
 
 .snake-dot {
@@ -208,20 +226,19 @@ span {
   }
 
   .dialog-text {
-    font-size: 16px;
+    font-size: 22px;
     line-height: 1.5;
   }
 }
 
-.box-image-projet {
-  width: 250px;
-  height: 250px;
+.box-image-projet2 {
+  width: 500px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto; // Centrer la boîte dans la grille
 }
-
 .box-image-projet {
   width: 300px;
   height: 150px;
@@ -229,6 +246,26 @@ span {
   justify-content: center;
   align-items: center;
   margin: 0 auto; // Centrer la boîte dans la grille
+}
+.card-ball {
+  border: 2px solid var(--theme-primary-color);
+}
+.custom-link {
+  color: var(--theme-secondary-color); /* Couleur du lien */
+  text-decoration: none; /* Supprime le soulignement par défaut */
+}
+.large-text-list li {
+  margin-bottom: 10px; /* Ajustez cette valeur selon l'espace souhaité */
+  font-size: 1.2rem; /* Ajustez cette valeur selon la taille de police souhaitée */
+}
+
+.custom-link:hover {
+  text-decoration: underline; /* Soulignez le lien au survol */
+}
+
+.title-project {
+  text-align: center;
+  color: var(--theme-secondary-color);
 }
 .developer-grid {
   background-color: var(--theme-primary-color-back);
@@ -244,6 +281,70 @@ span {
   &:hover {
     transform: scale(1.1);
   }
+}
+
+.dialog-ball {
+  padding: 5; /* Vérifiez si c'est une faute de frappe, cela devrait probablement être "5px" pour spécifier 5 pixels */
+  background-color: var(--theme-primary-color-back);
+  color: antiquewhite;
+
+  /* Styles pour le contenu du dialogue */
+  .dialog-content {
+    /* Styles pour la carte dans le contenu du dialogue */
+    .card-ball {
+      padding: 2; /* Vérifiez si c'est une faute de frappe, cela devrait probablement être "2px" pour spécifier 2 pixels */
+    }
+  }
+}
+.dialog-ball .dialog-content .dialog-list {
+  /* Vos styles ici */
+}
+
+/* Styles pour les images à l'intérieur du dialogue */
+.dialog-ball .dialog-content .box-image-projet .image-projet {
+  /* Vos styles ici */
+}
+/* Styles pour les liens à l'intérieur du dialogue */
+.dialog-ball .dialog-content .link {
+  /* Vos styles ici */
+}
+/* Styles pour les dialogues */
+.interest-dialog {
+  .dialog-title {
+    background-color: var(--theme-primary-color);
+    color: white;
+    padding: 16px;
+    border-radius: 4px 4px 0 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .dialog-content {
+    background-color: var(--theme-primary-color-back);
+    color: var(--theme-text-color);
+    padding: 20px;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .dialog-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: bold;
+    color: var(--theme-text-color);
+  }
+}
+
+.dialog-card {
+  background-color: var(--theme-background-color);
+  color: var(--theme-text-color);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.dialog-card-content {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 // EFFETS
@@ -285,4 +386,15 @@ span {
   to {
     width: 100%; // Augmenter progressivement la largeur du texte jusqu'à 100%
   }
+}
+
+// Appliquer l'animation aux éléments avec la classe "typing-animation"
+.typing-animation {
+  overflow: hidden; // Cacher le texte qui déborde
+  white-space: nowrap; // Empêcher le texte de passer à la ligne
+  animation: typing 2s steps(40, end); // Utiliser l'animation "typing" avec une durée de 2 secondes
+}
+
+.dialog-content p {
+  animation: typing 2s steps(60, end);
 }

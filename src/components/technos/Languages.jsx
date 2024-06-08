@@ -24,27 +24,27 @@ const Languages = () => {
     {
       src: htmlImg,
       title: "HTML",
-      text: "HyperText Markup Language (HTML) is the standard language for creating web pages.",
+      text: "Le HTML est le langage standardisé de création de pages web. Il permet de structurer le contenu d'une page en utilisant des balises (éléments) qui définissent différents types de contenu, comme les paragraphes, les titres, les images, les liens hypertexte, les formulaires, etc. Le navigateur web interprète ces balises et affiche la page web en conséquence. En résumé, le HTML fournit la structure de base et le contenu d'une page web.",
     },
     {
       src: cssImg,
       title: "CSS",
-      text: "Cascading Style Sheets (CSS) is used for designing the layout and style of web pages.",
+      text: "Les feuilles de style en cascade (CSS) sont utilisées pour styliser les pages web. Elles séparent la présentation du contenu, ce qui signifie que vous pouvez modifier l'apparence d'une page web sans en modifier le contenu HTML sous-jacent. Les styles CSS peuvent être intégrés directement dans les balises HTML, ajoutés en ligne à des éléments HTML spécifiques, ou stockés dans des fichiers CSS externes liés aux pages web. Le CSS contrôle l'apparence visuelle d'une page web, y compris la mise en page, les couleurs, les polices et bien plus encore.",
     },
     {
       src: jsImg,
-      title: "JavaScript",
-      text: "JavaScript is a programming language that allows you to implement complex features on web pages.",
+      title: "JavaScript ",
+      text: "JavaScript est un langage de programmation de script côté client couramment utilisé pour créer des interactions et des animations dynamiques sur les pages web. Contrairement au HTML et au CSS, qui sont statiques, JavaScript permet d'ajouter des fonctionnalités qui ne seraient pas possibles autrement. Cela inclut la validation de formulaires, les effets spéciaux, les interactions avec l'utilisateur et le contenu qui se met à jour sans rechargement complet de la page. JavaScript rend les pages web plus interactives et dynamiques pour les utilisateurs.",
     },
     {
       src: phpImg,
-      title: "PHP",
-      text: "PHP is a server-side scripting language designed for web development.",
+      title: "PHP ",
+      text: "PHP est un langage de script côté serveur largement utilisé pour le développement web. Il s'exécute sur le serveur avant que le contenu ne soit envoyé au navigateur web. PHP permet de générer du contenu HTML dynamique en fonction des besoins de l'utilisateur. Par exemple, il peut accéder et modifier des bases de données, gérer des sessions utilisateur et créer des applications web interactives. En résumé, PHP crée le contenu dynamique des pages web en fonction des interactions de l'utilisateur et d'autres facteurs.",
     },
     {
       src: javaImg,
       title: "Java",
-      text: "Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.",
+      text: "Java est un langage de programmation polyvalent orienté objet, conçu pour être indépendant de la plateforme d'exécution (fonctionne sur différents systèmes d'exploitation sans recompilation). Il est utilisé pour développer une variété d'applications, y compris les applications web d'entreprise (avec des frameworks web Java), les applications mobiles natives (avec Android Studio), les applications de bureau et les systèmes embarqués. Le code Java est généralement compilé en bytecode, qui est ensuite exécuté par une machine virtuelle Java (JVM) présente sur la plupart des systèmes d'exploitation. Java est un langage puissant et polyvalent qui peut être utilisé pour créer une large gamme d'applications.",
     },
   ];
 
@@ -94,7 +94,7 @@ const Languages = () => {
           {dialogTitle}
         </DialogTitle>
         <DialogContent className="dialog-content">
-          <DialogContentText className="dialog-text">
+          <DialogContentText p={2} className="dialog-text">
             {dialogContent}
           </DialogContentText>
         </DialogContent>

@@ -19,20 +19,21 @@ const BaseDonnees = () => {
   const [dialogTitle, setDialogTitle] = useState(""); // State to hold the dialog title
 
   const databases = [
+    // Variable name changed to "basesDeDonnees" (databases in French)
     {
       src: sqlImg,
-      title: "SQL/MySQL",
-      text: "SQL (Structured Query Language) is a standard language for managing and manipulating databases. MySQL is an open-source relational database management system that uses SQL.",
+      title: "SQL/MySQL", // Title in French
+      text: "SQL (Structured Query Language) est un langage normalisé de gestion et de manipulation de bases de données. MySQL est un système de gestion de bases de données relationnelles open-source qui utilise SQL.", // Description in French
     },
     {
       src: mongodbImg,
-      title: "MongoDB",
-      text: "MongoDB is a source-available cross-platform document-oriented database program.",
+      title: "MongoDB", // Title in French
+      text: "MongoDB est un programme de base de données orientée document, multi-plateforme et open-source.", // Description in French
     },
     {
       src: cloudinaryImg,
-      title: "Cloudinary",
-      text: "Cloudinary is a cloud-based service for managing and delivering images and videos, providing powerful APIs for media manipulation and optimization.",
+      title: "Cloudinary", // Title in French
+      text: "Cloudinary est un service cloud pour la gestion et la diffusion d'images et de vidéos. Il fournit des API puissantes pour la manipulation et l'optimisation des médias.", // Description in French
     },
   ];
 
@@ -82,7 +83,7 @@ const BaseDonnees = () => {
           {dialogTitle}
         </DialogTitle>
         <DialogContent className="dialog-content">
-          <DialogContentText className="dialog-text">
+          <DialogContentText p={2} className="dialog-text">
             {dialogContent}
           </DialogContentText>
         </DialogContent>

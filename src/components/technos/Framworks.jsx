@@ -13,7 +13,6 @@ import {
 import angularImg from "../../assets/angular.png"; // Assurez-vous que les chemins des images sont corrects
 import vueImg from "../../assets/vue.jpg";
 import reactImg from "../../assets/react.jpg";
-import reactNativeImg from "../../assets/react.jpg";
 import laravelImg from "../../assets/laravel.png";
 import symfonyImg from "../../assets/symfony.jpg";
 import nodeImg from "../../assets/node.webp";
@@ -27,33 +26,32 @@ const Frameworks = () => {
     {
       src: angularImg,
       title: "Angular",
-      text: "Angular is a platform for building mobile and desktop web applications.",
+      text: "Angular est un framework JavaScript complet pour la création d'applications web monopages et mobiles. Il offre une structure claire et des outils intégrés pour gérer les dépendances, le routage, les formulaires et les tests. Il est adapté aux projets web d'envergure nécessitant une architecture solide.",
     },
     {
       src: vueImg,
       title: "Vue.js",
-      text: "Vue.js is a progressive JavaScript framework for building user interfaces.",
+      text: "Vue.js est un framework JavaScript progressif pour la création d'interfaces utilisateur web interactives. Léger et flexible, il est facile à apprendre et à intégrer. Il se concentre sur la gestion de l'interface utilisateur et peut être associé à des bibliothèques tierces pour la gestion d'état et le routage. Il est populaire pour les projets de petite et moyenne envergure.",
     },
     {
       src: reactImg,
       title: "React",
-      text: "React is a JavaScript library for building user interfaces.",
+      text: "React est une bibliothèque JavaScript pour la création d'interfaces utilisateur web composables. Léger et flexible, il se concentre sur la gestion de l'état et la réutilisation des composants. Il ne fournit pas de structure d'application complète et s'appuie sur des bibliothèques tierces pour le routage, la gestion d'état et d'autres fonctionnalités. Il est populaire pour les interfaces utilisateur complexes et les applications web à page unique (SPA).",
     },
-
     {
       src: laravelImg,
       title: "Laravel",
-      text: "Laravel is a PHP framework for web artisans.",
+      text: "Laravel est un framework PHP pour le développement web rapide. Il fournit une structure MVC et des outils intégrés pour simplifier les tâches courantes comme l'authentification, la gestion de base de données et le routage. Il est connu pour sa rapidité de développement et sa communauté active.",
     },
     {
       src: symfonyImg,
       title: "Symfony",
-      text: "Symfony is a PHP framework for web projects and microservices.",
+      text: "Symfony est un ensemble de composants PHP et un framework MVC complet pour la création d'applications web et de microservices. Plus modulaire que Laravel, il offre une flexibilité accrue pour la construction d'applications complexes. Il est populaire pour les projets d'entreprise et les applications nécessitant une architecture solide.",
     },
     {
       src: nodeImg,
       title: "Node.js",
-      text: "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+      text: "Node.js est un environnement d'exécution JavaScript permettant d'exécuter du code JavaScript en dehors du navigateur web. Il ouvre la voie à des applications web en temps réel, des serveurs web et d'autres types d'applications non-navigateur. Il est souvent utilisé avec des frameworks JavaScript côté serveur comme Express.js pour construire des applications web performantes.",
     },
   ];
 
@@ -103,7 +101,7 @@ const Frameworks = () => {
           {dialogTitle}
         </DialogTitle>
         <DialogContent className="dialog-content">
-          <DialogContentText className="dialog-text">
+          <DialogContentText p={2} className="dialog-text">
             {dialogContent}
           </DialogContentText>
         </DialogContent>

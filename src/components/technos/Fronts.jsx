@@ -22,17 +22,17 @@ const Fronts = () => {
     {
       src: scssImg,
       title: "SCSS",
-      text: "SCSS is a preprocessor scripting language that is interpreted or compiled into CSS.",
+      text: "SCSS (Sass Cascading Style Sheets) est un langage de préprocesseur qui étend les fonctionnalités de CSS en y ajoutant des fonctionnalités supplémentaires comme les variables, les mixins, les fonctions et les structures de contrôle. Il permet de créer des styles CSS plus organisés, maintenables et réutilisables.",
     },
     {
       src: bootstrapImg,
       title: "Bootstrap",
-      text: "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.",
+      text: "Bootstrap est un framework CSS open-source populaire qui fournit un ensemble de composants HTML et CSS préconçus pour créer des interfaces utilisateur réactives et adaptées aux mobiles. Il simplifie le développement web en proposant des styles pré-définis pour les éléments courants comme les boutons, les formulaires, les tableaux et la navigation.",
     },
     {
       src: materialUiImg,
       title: "Material-UI",
-      text: "Material-UI is a popular React UI framework that follows Google's Material Design guidelines.",
+      text: "Material-UI est un framework d'interface utilisateur React basé sur les principes du Material Design de Google. Il offre une large gamme de composants réutilisables et personnalisables pour créer des interfaces utilisateur modernes et élégantes. Il est particulièrement adapté aux applications web complexes et aux systèmes de conception à grande échelle.",
     },
   ];
 
@@ -82,7 +82,7 @@ const Fronts = () => {
           {dialogTitle}
         </DialogTitle>
         <DialogContent className="dialog-content">
-          <DialogContentText className="dialog-text">
+          <DialogContentText p={2} className="dialog-text">
             {dialogContent}
           </DialogContentText>
         </DialogContent>
