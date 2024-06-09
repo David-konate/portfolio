@@ -66,7 +66,7 @@ const Fronts = () => {
                 alt={front.title}
                 onClick={() => handleClickOpen(front.title, front.text)}
                 style={{ cursor: "pointer" }}
-                className="interest-image" // Utilisez la même classe que dans le composant Interest
+                className="interest-image zoom-in" // Utilisez la même classe que dans le composant Interest
               />
             </Grid>
           </Grid>

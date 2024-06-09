@@ -24,13 +24,13 @@ const BonnePlaceProject = ({ open, onClose }) => {
   };
 
   return (
-    <Box p={0} className="dialog-ball">
-      <DialogContent className="dialog-ball">
-        <Typography className="title-project" variant="h3">
+    <Box p={0} className="dialog-ball ">
+      <DialogContent className="dialog-ball slide-in">
+        <Typography className="title-project slide-in" variant="h3">
           LaBonnePlace : Plateforme de petites annonces en ligne
         </Typography>
 
-        <Card className="card-bonne-place" sx={{ marginTop: 4 }}>
+        <Card className="card-bonne-place " sx={{ marginTop: 4 }}>
           <Typography p={2} variant="body1">
             BonnePlace est une plateforme de petites annonces en ligne,
             similaire à Le Bon Coin. Ce projet a été réalisé dans le cadre de ma
@@ -39,23 +39,25 @@ const BonnePlaceProject = ({ open, onClose }) => {
           </Typography>
         </Card>
         <Box mt={5}>
-          <ul className="dialog-list">
-            <li>
+          <ul className="dialog-list-2 slide-in">
+            <li className="task-item-2 typing-text-2">
               Implémentation de la logique d'authentification et d'autorisation
               des utilisateurs
             </li>
-            <li>
+            <li className="task-item-2 typing-text-2">
               Création de fonctionnalités CRUD pour la gestion des annonces et
               des utilisateurs
             </li>
-            <li>
+            <li className="task-item-2 typing-text-2">
               Mise en place de la navigation entre les différentes pages de
               l'application
             </li>
-            <li>
+            <li className="task-item-2 typing-text-2">
               Travail sur la logique de connexion et le profil utilisateur
             </li>
-            <li>Migration et seeding de la base de données</li>
+            <li className="task-item-2 typing-text-2">
+              Migration et seeding de la base de données
+            </li>
           </ul>
         </Box>
         <Box mt={5} p={1} style={{ overflowY: "hidden" }}>

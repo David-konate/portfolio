@@ -23,7 +23,7 @@ const Qualification = () => {
     {
       src: bacStg,
       title: "BAC STG",
-      text: "Le BAC STG m'a fourni une solide culture économique, juridique et sociale, essentielle pour comprendre le monde des affaires et des organisations. J'ai également acquis une maîtrise des outils informatiques essentiels et développé des compétences en communication et en travail en équipe, compétences indispensables pour évoluer dans un environnement professionnel collaboratif. Au-delà de ces bases générales, le BAS STG m'a permis d'approfondir mes connaissances en analyse économique et financière, en gestion commerciale et marketing, ainsi qu'en droit des affaires et des contrats. Ces compétences spécifiques me permettent d'appréhender les enjeux stratégiques des entreprises et de contribuer à la prise de décisions éclairées.",
+      text: "Le BAC STG m'a fournit une solide culture économique, juridique et sociale, essentielle pour comprendre le monde des affaires et des organisations. J'ai également acquis une maîtrise des outils informatiques essentiels et développé des compétences en communication et en travail en équipe, compétences indispensables pour évoluer dans un environnement professionnel collaboratif. Au-delà de ces bases générales, le BAS STG m'a permis d'approfondir mes connaissances en analyse économique et financière, en gestion commerciale et marketing, ainsi qu'en droit des affaires et des contrats. Ces compétences spécifiques me permettent d'appréhender les enjeux stratégiques des entreprises et de contribuer à la prise de décisions éclairées.",
     },
     {
       src: btsMuc,

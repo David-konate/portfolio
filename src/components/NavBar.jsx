@@ -32,14 +32,18 @@ const NavBar = () => {
       <AppBar
         className="navBar"
         position="sticky"
-        sx={{ top: 0, backgroundColor: "transparent" }}
+        sx={{ top: 0, backgroundColor: "var( --theme-primary-color-back)" }}
       >
         <Container maxWidth={"xl"}>
           <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
             <Hidden smDown>
               <Box className="no-logo" onClick={() => navigate(`/`)}>
                 {" "}
-                <Typography>David Konaté</Typography>
+                <Typography
+                  sx={{ color: "var(--theme-link-color)", fontWeight: "bold" }}
+                >
+                  David Konaté
+                </Typography>
               </Box>
 
               <Stack
@@ -54,6 +58,11 @@ const NavBar = () => {
               >
                 {links.map((link) => (
                   <NavLink
+                    style={{
+                      padding: 5,
+                      borderRadius: 5,
+                      textDecoration: "none",
+                    }}
                     className="navbar_link"
                     key={link.label}
                     to={link.path}
@@ -81,7 +90,6 @@ const NavBar = () => {
             >
               <NavLink to={link.path} className="drawer-link">
                 <ListItemText
-                  className="my-list-text"
                   sx={{ padding: 1 }}
                   className="drawer-text"
                   primary={

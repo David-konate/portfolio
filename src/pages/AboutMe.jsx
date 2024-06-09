@@ -36,33 +36,45 @@ const AboutMeMenu = () => {
             component="div"
             sx={{
               marginBottom: "10px",
-              // Ajoutez le style cursor pointer
+              color: "var(--theme-secondary-color)",
+              fontWeight: "bold",
             }}
           >
             Qui suis-je?
           </Typography>
           <List>
-            <ListItem selected={selectedComponent === <Bio />}>
-              <ListItemText
-                className="my-list-text"
-                primary="Bio"
-                onClick={() => handleComponentChange(<Bio />)}
-                style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
-              />
+            <ListItem
+              className={
+                selectedComponent.type === Bio
+                  ? "my-list-item selected-link"
+                  : "my-list-item"
+              }
+              onClick={() => handleComponentChange(<Bio />)}
+              style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
+            >
+              <ListItemText primary="Bio" />
             </ListItem>
-            <ListItem onClick={() => handleComponentChange(<Interest />)}>
-              <ListItemText
-                className="my-list-text"
-                primary="Intérêts"
-                style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
-              />
+            <ListItem
+              className={
+                selectedComponent.type === Interest
+                  ? "my-list-item selected-link"
+                  : "my-list-item"
+              }
+              onClick={() => handleComponentChange(<Interest />)}
+              style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
+            >
+              <ListItemText primary="Intérêts" />
             </ListItem>
-            <ListItem onClick={() => handleComponentChange(<Qualification />)}>
-              <ListItemText
-                className="my-list-text"
-                primary="Qualifications"
-                style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
-              />
+            <ListItem
+              className={
+                selectedComponent.type === Qualification
+                  ? "my-list-item selected-link"
+                  : "my-list-item"
+              }
+              onClick={() => handleComponentChange(<Qualification />)}
+              style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
+            >
+              <ListItemText primary="Qualifications" />
             </ListItem>
           </List>
         </Box>

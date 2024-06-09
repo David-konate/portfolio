@@ -28,7 +28,7 @@ const BaseDonnees = () => {
     {
       src: mongodbImg,
       title: "MongoDB", // Title in French
-      text: "MongoDB est un programme de base de données orientée document, multi-plateforme et open-source.", // Description in French
+      text: "MongoDB est un programme de base de données orienté document, multi-plateforme et open-source.", // Description in French
     },
     {
       src: cloudinaryImg,
@@ -67,7 +67,7 @@ const BaseDonnees = () => {
                 alt={database.title}
                 onClick={() => handleClickOpen(database.title, database.text)}
                 style={{ cursor: "pointer" }}
-                className="interest-image" // Utilisez la même classe que dans le composant Interest
+                className="interest-image zoom-in" // Utilisez la même classe que dans le composant Interest
               />
             </Grid>
           </Grid>

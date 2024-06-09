@@ -90,10 +90,24 @@ li {
 .navBar {
   top: 0;
   background-color: transparent;
+
   .no-logo {
     cursor: pointer;
   }
+  .navbar_link {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: aliceblue;
+  }
+  .navbar_link.active {
+    padding: 2;
+    background-color: var(--theme-background-color);
+    color: var(--theme-primary-color-back);
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
 }
+
 .footer {
   background-color: transparent;
 }
@@ -125,7 +139,9 @@ li {
     }
   }
 }
-
+.selected-link {
+  color: var(--theme-link-color);
+}
 .snake-dot {
   position: absolute;
   width: 2%;
@@ -392,6 +408,10 @@ li {
 .typing-animation {
   overflow: hidden; // Cacher le texte qui déborde
   white-space: nowrap; // Empêcher le texte de passer à la ligne
+  animation: typing 2s steps(40, end); // Utiliser l'animation "typing" avec une durée de 2 secondes
+}
+.typing-animation2 {
+  overflow: hidden; // Cacher le texte qui déborde
   animation: typing 2s steps(40, end); // Utiliser l'animation "typing" avec une durée de 2 secondes
 }
 

@@ -25,12 +25,12 @@ const BallnConnectProject = () => {
 
   return (
     <Box p={0} className="dialog-ball">
-      <DialogContent className="dialog-content">
-        <Typography className="title-project" variant="h3">
+      <DialogContent className="dialog-ball slide-in">
+        <Typography className="title-project slide-in" variant="h3">
           BallnConnect : Application mobile pour les passionnés de basketball
         </Typography>
 
-        <Card className="card-ball" sx={{ marginTop: 4 }}>
+        <Card className="card-bonne-place" sx={{ marginTop: 4 }}>
           <Typography p={2} variant="body1">
             BallnConnect est une application mobile qui connecte les passionnés
             de basketball aux terrains, événements et joueurs à proximité. J'ai
@@ -39,7 +39,7 @@ const BallnConnectProject = () => {
           </Typography>
         </Card>
         <Box mt={5}>
-          <ul className="dialog-list">
+          <ul className="dialog-list slide-in">
             <li>Authentification et autorisation des utilisateurs</li>
             <li>
               Intégration avec l'API Google Street View pour la visualisation
@@ -108,13 +108,11 @@ const BallnConnectProject = () => {
         fullWidth
         maxWidth="sm"
       >
-        <DialogContent>
-          <img
-            src={fullScreenImage}
-            alt="Full Screen"
-            style={{ width: "100%", height: "auto" }}
-          />
-        </DialogContent>
+        <img
+          src={fullScreenImage}
+          alt="Full Screen"
+          style={{ width: "100%", height: "auto" }}
+        />
       </Dialog>
     </Box>
   );

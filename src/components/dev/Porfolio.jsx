@@ -25,8 +25,8 @@ const Portfolio = () => {
 
   return (
     <Box p={0} className="dialog-ball">
-      <DialogContent className="dialog-ball">
-        <Typography className="title-project" variant="h3">
+      <DialogContent className="dialog-ball slide-in">
+        <Typography className="title-project slide-in" variant="h3">
           Portfolio
         </Typography>
 
@@ -41,7 +41,7 @@ const Portfolio = () => {
         </Card>
 
         <Box mt={5}>
-          <ul className="dialog-list">
+          <ul className="dialog-list slide-in">
             <li>Développement d'applications Web front-end</li>
             <li>
               Intégration de bibliothèques JavaScript et de frameworks CSS

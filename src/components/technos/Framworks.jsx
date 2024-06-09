@@ -85,7 +85,7 @@ const Frameworks = () => {
                 alt={framework.title}
                 onClick={() => handleClickOpen(framework.title, framework.text)}
                 style={{ cursor: "pointer" }}
-                className="interest-image" // Utilisez la même classe que dans le composant Interest
+                className="interest-image zoom-in" // Utilisez la même classe que dans le composant Interest
               />
             </Grid>
           </Grid>

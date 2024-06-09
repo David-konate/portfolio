@@ -78,7 +78,7 @@ const Languages = () => {
                 alt={language.title}
                 onClick={() => handleClickOpen(language.title, language.text)}
                 style={{ cursor: "pointer" }}
-                className="interest-image" // Utilisez la même classe que dans le composant Interest
+                className="interest-image zoom-in" // Utilisez la même classe que dans le composant Interest
               />
             </Grid>
           </Grid>

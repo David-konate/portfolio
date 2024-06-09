@@ -24,8 +24,11 @@ const Interest = () => {
     {
       src: dev,
       title: "Développement",
-      text: `Fort de mes compétences en langages de programmation tels que Java, PHP, JavaScript, HTML et CSS, je suis un développeur full-stack accompli, capable de créer des applications web et mobiles complètes. Mon expertise en back-end avec PHP et en front-end avec React ou JavaScript me permet de maîtriser l'ensemble du processus de développement.\n\nPassionné par les innovations dans le rendu 3D et le développement d'applications immersives, j'explore constamment de nouvelles technologies pour créer des expériences utilisateur interactives et engageantes. Mon enthousiasme pour les jeux vidéo alimente mon intérêt pour les possibilités offertes par les technologies 3D dans le domaine du divertissement.`,
+      text: `Fort de mes compétences en langages de programmation tels que Java, PHP, JavaScript,
+       HTML et CSS, je suis un développeur full-stack accompli, capable de créer des applications web
+        et mobiles complètes. Mon expertise en back-end avec PHP et en front-end avec React ou JavaScript me permet de maîtriser l'ensemble du processus de développement.\n\nPassionné par les innovations dans le rendu 3D et le développement d'applications immersives, j'explore constamment de nouvelles technologies pour créer des expériences utilisateur interactives et engageantes. Mon enthousiasme pour les jeux vidéo alimente mon intérêt pour les possibilités offertes par les technologies 3D dans le domaine du divertissement.`,
     },
+
     {
       src: scienceFiction,
       title: "Science Fiction",
@@ -39,7 +42,7 @@ const Interest = () => {
     {
       src: histoire,
       title: "Culture et histoire",
-      text: `Fasciné par les civilisations anciennes, je plonge dans l'histoire depuis mon plus jeune âge. De l'Antiquité à la fin de la Renaissance, j'explore les vestiges du passé à travers les visites de musées comme le Louvre, la découverte de châteaux historiques et l'étude des mythologies égyptienne, romaine, grecque et nordique.\n\nCette passion pour l'histoire nourrit mon approche du métier de développeur. Les leçons tirées du passé sur la créativité humaine, la résolution de problèmes et l'adaptation aux changements m'inspirent à construire des applications qui respectent l'héritage culturel et les valeurs humaines. L'histoire me rappelle que l'innovation ne se fait jamais dans le vide, mais toujours en dialogue avec le passé.`,
+      text: `Fasciné par les civilisations anciennes, je plonge dans l'histoire depuis mon plus jeune âge. De l'Antiquité à la fin de la Renaissance, j'explore les vestiges du passé à travers les visites de musées comme le Louvre, la découverte de châteaux historiques et l'étude des mythologies égyptiennes, romaines, grecques et nordiques.\n\nCette passion pour l'histoire nourrit mon approche du métier de développeur. Les leçons tirées du passé sur la créativité humaine, la résolution de problèmes et l'adaptation aux changements m'inspirent à construire des applications qui respectent l'héritage culturel et les valeurs humaines. L'histoire me rappelle que l'innovation ne se fait jamais dans le vide, mais toujours en dialogue avec le passé.`,
     },
     {
       src: innovation,
@@ -76,20 +79,24 @@ const Interest = () => {
     <div className="interest-list">
       <Grid container spacing={3}>
         {images.map((image, index) => (
-          <Grid item xs={12} sm={6} key={index}>
-            <Grid container direction="column" spacing={3}>
-              <Grid item className="interest-image-container">
-                <Typography mb={1} variant="h6" className="interest-title">
-                  {image.title}
-                </Typography>
-                <img
-                  className="interest-image"
-                  src={image.src}
-                  alt={`Intérêt ${index + 1}`}
-                  onClick={() => handleClickOpen(image.title, image.text)}
-                  style={{ cursor: "pointer" }}
-                />
-              </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            key={index}
+            className="interest-image-container"
+          >
+            <Grid container direction="column" alignItems="center">
+              <Typography mb={1} variant="h6">
+                {image.title}
+              </Typography>
+              <img
+                className="interest-image"
+                src={image.src}
+                alt={`Intérêt ${index + 1}`}
+                onClick={() => handleClickOpen(image.title, image.text)}
+                style={{ cursor: "pointer" }}
+              />
             </Grid>
           </Grid>
         ))}

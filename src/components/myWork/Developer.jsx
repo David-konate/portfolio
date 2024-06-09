@@ -29,53 +29,52 @@ const Developer = () => {
           Développeur
         </Typography>
       </Box>
-      <Box mt={4} p={2}>
-        <Grid container spacing={4} justifyContent="center">
-          <Grid item xs={12} sm={6} md={4} textAlign="center">
-            <Typography variant="h6" className="title-h6">
-              La Bonne Place
-            </Typography>
-            <Box mt={1} className="box-image-projet">
-              <img
-                className="image-projet"
-                src={labonnecplaceImage}
-                alt="La Bonne Place"
-                onClick={() =>
-                  handleClickOpen(
-                    <BonnePlaceProject open={open} onClose={handleClose} />
-                  )
-                }
-              />
-            </Box>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} textAlign="center">
-            <Typography variant="h6" className="title-h6">
-              Ball'N'Connect
-            </Typography>
-            <Box mt={1} className="box-image-projet">
-              <img
-                className="image-projet"
-                src={ballnconnectImage}
-                alt="Ball'N'Connect"
-                onClick={() => handleClickOpen(<BallnConnectProject />)}
-              />
-            </Box>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} textAlign="center">
-            <Typography variant="h6" className="title-h6">
-              Portfolio
-            </Typography>
-            <Box mt={1} className="box-image-projet">
-              <img
-                className="image-projet"
-                src={portfolioImage}
-                alt="Portfolio"
-                onClick={() => handleClickOpen(<Portfolio />)}
-              />
-            </Box>
-          </Grid>
+
+      <Grid container spacing={4} mt={4} justifyContent="center">
+        <Grid item xs={12} sm={6} md={4} textAlign="center">
+          <Typography variant="h6" className="title-h6">
+            La Bonne Place
+          </Typography>
+          <Box mt={1} className="box-image-projet">
+            <img
+              className="image-projet zoom-in"
+              src={labonnecplaceImage}
+              alt="La Bonne Place"
+              onClick={() =>
+                handleClickOpen(
+                  <BonnePlaceProject open={open} onClose={handleClose} />
+                )
+              }
+            />
+          </Box>
         </Grid>
-      </Box>
+        <Grid item xs={12} sm={6} md={4} textAlign="center">
+          <Typography variant="h6" className="title-h6">
+            Ball'N'Connect
+          </Typography>
+          <Box mt={1} className="box-image-projet">
+            <img
+              className="image-projet zoom-in"
+              src={ballnconnectImage}
+              alt="Ball'N'Connect"
+              onClick={() => handleClickOpen(<BallnConnectProject />)}
+            />
+          </Box>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} textAlign="center">
+          <Typography variant="h6" className="title-h6">
+            Portfolio
+          </Typography>
+          <Box mt={1} className="box-image-projet">
+            <img
+              className="image-projet zoom-in"
+              src={portfolioImage}
+              alt="Portfolio"
+              onClick={() => handleClickOpen(<Portfolio />)}
+            />
+          </Box>
+        </Grid>
+      </Grid>
 
       <Dialog
         className="dialog-ball"

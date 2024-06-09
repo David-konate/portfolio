@@ -35,30 +35,46 @@ const MyWork = () => {
           <Typography
             variant="h6"
             component="div"
-            sx={{ marginBottom: "10px" }} // Ajoutez le style cursor pointer
+            sx={{
+              marginBottom: "10px",
+              color: "var(--theme-secondary-color)",
+              fontWeight: "bold",
+            }} // Ajoutez le style cursor pointer
           >
-            Mon Travail
+            Mon Métier
           </Typography>
           <List>
-            <ListItem selected={selectedComponent === <Technologies />}>
+            <ListItem>
               <ListItemText
-                className="my-list-text"
+                className={
+                  selectedComponent.type === Technologies
+                    ? "my-list-text selected-link"
+                    : "my-list-text"
+                }
                 primary="Technologies"
                 onClick={() => handleComponentChange(<Technologies />)}
                 style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
               />
             </ListItem>
-            <ListItem selected={selectedComponent === <Developer />}>
+            <ListItem>
               <ListItemText
-                className="my-list-text"
+                className={
+                  selectedComponent.type === Developer
+                    ? "my-list-text selected-link"
+                    : "my-list-text"
+                }
                 primary="Développeur"
                 onClick={() => handleComponentChange(<Developer />)}
                 style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
               />
             </ListItem>
-            <ListItem selected={selectedComponent === <AppDesigner />}>
+            <ListItem>
               <ListItemText
-                className="my-list-text"
+                className={
+                  selectedComponent.type === AppDesigner
+                    ? "my-list-text selected-link"
+                    : "my-list-text"
+                }
                 primary="Concepteur Développeur"
                 onClick={() => handleComponentChange(<AppDesigner />)}
                 style={{ cursor: "pointer" }} // Ajoutez le style cursor pointer
