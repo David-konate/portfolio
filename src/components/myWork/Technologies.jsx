@@ -3,7 +3,6 @@ import { Box, Typography } from "@mui/material";
 import Languages from "../technos/Languages";
 import Frameworks from "../technos/Framworks";
 import Fronts from "../technos/Fronts";
-import BDD from "../technos/BaseDonnees";
 import BaseDonnees from "../technos/BaseDonnees";
 
 const Technologies = () => {

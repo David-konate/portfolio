@@ -25,7 +25,7 @@ const Developer = () => {
   return (
     <Box>
       <Box>
-        <Typography ml={5} mb={2} variant="h4" className="title-h4">
+        <Typography ml={5} mb={2} variant="h2">
           Développeur
         </Typography>
       </Box>

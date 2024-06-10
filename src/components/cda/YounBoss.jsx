@@ -153,7 +153,7 @@ const YoungBoss = () => {
         </Box>
 
         <Box mt={5} p={1} style={{ overflowY: "hidden" }}>
-          <Stack
+          {/* <Stack
             mt={5}
             direction="row"
             spacing={2}
@@ -180,7 +180,7 @@ const YoungBoss = () => {
               className="image-projet"
               onClick={() => handleImageClick(SmatDev3, "xl")}
             />
-          </Stack>
+          </Stack> */}
         </Box>
         <Typography
           className="custom-link"

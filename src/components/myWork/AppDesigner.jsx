@@ -24,7 +24,7 @@ const AppDesigner = () => {
 
   return (
     <Box>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h2" gutterBottom>
         Concepteur Développeur d'Applications
       </Typography>
       <Grid mt={4} container spacing={4} justifyContent="center">

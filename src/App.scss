@@ -26,7 +26,6 @@ body {
 
 /* Appliquer Montserrat aux titres */
 h1,
-h2,
 h3,
 h4,
 h5,
@@ -34,6 +33,10 @@ h6 {
   font-family: "Montserrat", sans-serif;
 }
 
+h2 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--theme-link-color);
+}
 /* Appliquer Fira Mono au reste du texte */
 body,
 p,
