@@ -1,89 +1,100 @@
 import React, { useState } from "react";
-import { Box, Typography, Dialog, DialogContent, Grid } from "@mui/material";
-import ballnconnectImage from "../../assets/ballnconnect1.jpg";
 import portfolioImage from "../../assets/portfolio2.png";
-import labonnecplaceImage from "../../assets/labonneplace2.png";
-import Test from "../../pages/test";
+import bonnePlaceImage from "../../assets/labonneplace2.png";
+import ballnConnectImage from "../../assets/ballnconnect3.jpg";
+import PortfolioProject from "../dev/PorfolioProject";
+import BonnePlaceProject from "../dev/BonnePlaceProject";
 import BallnConnectProject from "../dev/BallnConnectProject";
-import BonnePlaceProject from "../dev/BonnePlace";
-import Portfolio from "../dev/Porfolio";
+import {
+  Box,
+  Grid,
+  Typography,
+  Dialog,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from "@mui/material";
 
 const Developer = () => {
   const [open, setOpen] = useState(false);
-  const [dialogContent, setDialogContent] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(null);
 
-  const handleClickOpen = (content) => {
-    setDialogContent(content);
+  const projects = [
+    {
+      title: "Portfolio",
+      image: portfolioImage,
+      component: PortfolioProject,
+    },
+    {
+      title: "La Bonne Place",
+      image: bonnePlaceImage,
+      component: BonnePlaceProject,
+    },
+    {
+      title: "BallnConnect",
+      image: ballnConnectImage,
+      component: BallnConnectProject,
+    },
+  ];
+
+  const handleClickOpen = (project) => {
+    setSelectedProject(project);
     setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
-    setDialogContent(null);
+    setSelectedProject(null);
   };
 
   return (
-    <Box>
-      <Box>
-        <Typography ml={5} mb={2} variant="h2">
-          Développeur
-        </Typography>
-      </Box>
-
-      <Grid container spacing={4} mt={4} justifyContent="center">
-        <Grid item xs={12} sm={6} md={4} textAlign="center">
-          <Typography variant="h6" className="title-h6">
-            La Bonne Place
-          </Typography>
-          <Box mt={1} className="box-image-projet">
-            <img
-              className="image-projet zoom-in"
-              src={labonnecplaceImage}
-              alt="La Bonne Place"
-              onClick={() =>
-                handleClickOpen(
-                  <BonnePlaceProject open={open} onClose={handleClose} />
-                )
-              }
-            />
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} textAlign="center">
-          <Typography variant="h6" className="title-h6">
-            Ball'N'Connect
-          </Typography>
-          <Box mt={1} className="box-image-projet">
-            <img
-              className="image-projet zoom-in"
-              src={ballnconnectImage}
-              alt="Ball'N'Connect"
-              onClick={() => handleClickOpen(<BallnConnectProject />)}
-            />
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} textAlign="center">
-          <Typography variant="h6" className="title-h6">
-            Portfolio
-          </Typography>
-          <Box mt={1} className="box-image-projet">
-            <img
-              className="image-projet zoom-in"
-              src={portfolioImage}
-              alt="Portfolio"
-              onClick={() => handleClickOpen(<Portfolio />)}
-            />
-          </Box>
-        </Grid>
+    <Box className="interest-list">
+      <Grid container spacing={3}>
+        {projects.map((project, index) => (
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            key={index}
+            className="interest-image-container"
+          >
+            <Grid container direction="column" alignItems="center">
+              <Typography mb={1} variant="h6">
+                {project.title}
+              </Typography>
+              <img
+                className="interest-image"
+                src={project.image}
+                alt={`Projet ${index + 1}`}
+                onClick={() => handleClickOpen(project)}
+                style={{ cursor: "pointer" }}
+              />
+            </Grid>
+          </Grid>
+        ))}
       </Grid>
-
       <Dialog
-        className="dialog-ball"
         open={open}
         onClose={handleClose}
-        maxWidth="md"
-        fullWidth
+        aria-labelledby="dialog-title"
+        className="interest-dialog"
       >
-        {dialogContent}
+        {selectedProject && (
+          <>
+            <DialogTitle
+              id="dialog-title"
+              variant="h4"
+              className="dialog-title"
+            >
+              {selectedProject.title}
+            </DialogTitle>
+            <Box>
+              <DialogContent className="dialog-content">
+                <selectedProject.component />
+              </DialogContent>
+            </Box>
+          </>
+        )}
       </Dialog>
     </Box>
   );

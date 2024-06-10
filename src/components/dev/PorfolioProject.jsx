@@ -12,7 +12,7 @@ import MonPortrait from "../../assets/portfolio1.png";
 import EnCoursDeProjet from "../../assets/portfolio2.png";
 import TravailEnEquipe from "../../assets/portfolio3.png";
 
-const Portfolio = () => {
+const PortfolioProject = () => {
   const [fullScreenImage, setFullScreenImage] = useState(null);
 
   const handleImageClick = (image) => {
@@ -25,11 +25,11 @@ const Portfolio = () => {
 
   return (
     <Box p={0} className="dialog-ball">
-      <DialogContent className="dialog-ball slide-in">
-        <Typography className="title-project slide-in" variant="h3">
-          Portfolio
-        </Typography>
+      <Typography className="title-project slide-in" variant="h3">
+        Portfolio
+      </Typography>
 
+      <DialogContent className="dialog-ball slide-in">
         <Card className="card-portfolio" sx={{ marginTop: 4 }}>
           <Typography p={2} variant="body1">
             Je suis un développeur front-end passionné par la création
@@ -100,4 +100,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default PortfolioProject;

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import { Container, Typography, Box, Grid } from "@mui/material";
+import { Container, Typography, Box, Grid, Hidden } from "@mui/material";
 import Game from "../components/game/Game";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   useEffect(() => {
@@ -10,7 +11,7 @@ const Home = () => {
       let delay = 0;
       textChildren.forEach((child) => {
         child.style.transitionDelay = `${delay}s`;
-        delay += 0.5; // Ajustez la vitesse de défilement selon vos préférences
+        delay += 0.5; // Adjust the scrolling speed as per your preference
         child.classList.add("typing-animation");
       });
     }
@@ -22,6 +23,14 @@ const Home = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>Portfolio - David Konaté</title>
+        <meta
+          name="description"
+          content="Bienvenue sur le portfolio de David Konaté, concepteur et développeur d'applications.
+Découvrez mes réalisations, mes compétences et mon expertise dans la création d'applications web et mobiles innovantes."
+        />
+      </Helmet>
       <Grid
         className="home"
         container
@@ -94,11 +103,13 @@ const Home = () => {
             https://www.linkedin.com/in/david-konaté-670172194/
           </Typography>
         </Grid>
-        <Grid item xs={12} md={6} className="right-game" textAlign="center">
-          <Box>
-            <Game />
-          </Box>
-        </Grid>
+        <Hidden>
+          <Grid item xs={12} md={6} className="right-game" textAlign="center">
+            <Box display={{ xs: "none", md: "block" }}>
+              <Game />
+            </Box>
+          </Grid>
+        </Hidden>
       </Grid>
     </Container>
   );

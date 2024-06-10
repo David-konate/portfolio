@@ -5,9 +5,9 @@ import {
   Typography,
   CardMedia,
   Stack,
-  Card,
   Box,
   Divider,
+  Card,
 } from "@mui/material";
 import SmatDesign1 from "../../assets/cda1.png";
 import SmatDesign2 from "../../assets/cda2.png";

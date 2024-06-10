@@ -31,6 +31,7 @@ h4,
 h5,
 h6 {
   font-family: "Montserrat", sans-serif;
+  color: var(--theme-secondary-color);
 }
 
 h2 {
@@ -158,6 +159,59 @@ li {
   height: 2%;
   background-color: var(--theme-secondary-color);
   border-radius: 5%; /* arrondit les coins pour former un cercle */
+}
+
+.custom-drawer {
+  .custom-list {
+    height: 100vh;
+    background-color: var(--theme-secondary-color);
+
+    .MuiListItem-root {
+      color: var(--theme-primary-color-back);
+      font-weight: bold;
+
+      &:hover {
+        background-color: var(--theme-primary-color-back);
+        color: var(--theme-secondary-color);
+        font-weight: bold;
+      }
+
+      &.Mui-selected {
+        background-color: var(--theme-primary-color);
+        color: var(--theme-link-color);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.second-drawer {
+  .drawer-list {
+    background-color: var(--theme-primary-color);
+    height: 100vh;
+
+    .drawer-item {
+      &.selected {
+        background-color: var(--theme-primary-color);
+        /* Ajoutez ici les styles pour les liens sélectionnés dans le Drawer */
+        color: var(--theme-link-color);
+        font-weight: bold;
+      }
+
+      .drawer-link {
+        border-radius: "20px";
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      .drawer-link.active {
+        border-radius: 5px;
+        background-color: var(--theme-secondary-color);
+        color: var(--theme-primary-color-back) !important;
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 .game-area {

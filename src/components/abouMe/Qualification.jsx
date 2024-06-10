@@ -38,7 +38,7 @@ const Qualification = () => {
 
     {
       src: devApp,
-      title: "Concepteur Dév d'Application",
+      title: "Concepteur/Dév d'App",
       text: "Mon titre de Concepteur Développeur d'Applications atteste de mon expertise dans la conception et le développement d'applications web et mobiles. Je possède une solide maîtrise des architectures logicielles et des principes de conception, me permettant de piloter des projets complexes et de manager des équipes de développement avec efficacité. Mes compétences spécifiques incluent la conception d'architectures logicielles, le développement d'interfaces utilisateur et d'expériences utilisateur engageantes, la gestion de projet et l'application de méthodes agiles, ainsi que l'expertise en technologies spécifiques telles que le Cloud et DevOps.",
     },
   ];

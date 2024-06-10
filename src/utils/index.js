@@ -17,8 +17,14 @@ export const links = [
     path: "/about-me",
   },
   {
-    label: "Mon métier",
+    label: "_mon_métier",
     path: "/my-work",
+  },
+];
+export const linksSM = [
+  {
+    label: "_home",
+    path: "/",
   },
 ];
 

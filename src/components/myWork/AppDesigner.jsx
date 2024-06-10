@@ -1,65 +1,98 @@
 import React, { useState } from "react";
-import { Box, Typography, Dialog, DialogContent, Grid } from "@mui/material";
-
-// Importing images from the assets directory
-import smat2Image from "../../assets/smat2.png";
-import undr1Image from "../../assets/undr2.png";
-import Test from "../../pages/test";
+import {
+  Box,
+  Grid,
+  Typography,
+  Dialog,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from "@mui/material";
 import Smat from "../cda/Smat";
 import YoungBoss from "../cda/YounBoss";
+import smat2Image from "../../assets/smat2.png";
+import undr1Image from "../../assets/undr2.png";
 
 const AppDesigner = () => {
+  // État pour gérer l'ouverture et la sélection du projet
   const [open, setOpen] = useState(false);
-  const [dialogContent, setDialogContent] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(null);
 
-  const handleClickOpen = (content) => {
-    setDialogContent(content);
+  // Liste des projets avec leurs titres, images et composants associés
+  const projects = [
+    {
+      title: "Smat",
+      image: smat2Image,
+      component: Smat,
+    },
+    {
+      title: "Young Boss",
+      image: undr1Image,
+      component: YoungBoss,
+    },
+    // Ajoutez d'autres projets si nécessaire
+  ];
+
+  // Fonction pour gérer l'ouverture du projet sélectionné
+  const handleClickOpen = (project) => {
+    setSelectedProject(project);
     setOpen(true);
   };
 
+  // Fonction pour fermer le dialogue
   const handleClose = () => {
     setOpen(false);
-    setDialogContent(null);
+    setSelectedProject(null);
   };
 
   return (
-    <Box>
-      <Typography variant="h2" gutterBottom>
-        Concepteur Développeur d'Applications
-      </Typography>
-      <Grid mt={4} container spacing={4} justifyContent="center">
-        <Grid item xs={12} sm={6} md={4} textAlign="center">
-          <Typography variant="h6">Smat-steps</Typography>
-          <Box mt={1} className="box-image-projet">
-            <img
-              className="image-projet zoom-in"
-              src={smat2Image}
-              alt="Application smat-setps "
-              onClick={() => handleClickOpen(<Smat />)}
-            />
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} textAlign="center">
-          <Typography variant="h6">YoungBoss</Typography>
-          <Box mt={1} className="box-image-projet">
-            <img
-              className="image-projet zoom-in"
-              src={undr1Image}
-              alt="Undr 1"
-              onClick={() => handleClickOpen(<YoungBoss />)}
-            />
-          </Box>
-        </Grid>
+    <Box className="interest-list">
+      <Grid container spacing={3}>
+        {projects.map((project, index) => (
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            key={index}
+            className="interest-image-container"
+          >
+            <Grid container direction="column" alignItems="center">
+              <Typography mb={1} variant="h6">
+                {project.title}
+              </Typography>
+              <img
+                className="interest-image"
+                src={project.image}
+                alt={`Projet ${index + 1}`}
+                onClick={() => handleClickOpen(project)}
+                style={{ cursor: "pointer" }}
+              />
+            </Grid>
+          </Grid>
+        ))}
       </Grid>
-
       <Dialog
-        className="dialog-ball"
         open={open}
         onClose={handleClose}
-        maxWidth="md"
-        fullWidth
+        aria-labelledby="dialog-title"
+        className="interest-dialog"
       >
-        {dialogContent}
+        {selectedProject && (
+          <>
+            <DialogTitle
+              id="dialog-title"
+              variant="h4"
+              className="dialog-title"
+            >
+              {selectedProject.title}
+            </DialogTitle>
+            <Box>
+              <DialogContent className="dialog-content">
+                <selectedProject.component />
+              </DialogContent>
+            </Box>
+          </>
+        )}
       </Dialog>
     </Box>
   );
