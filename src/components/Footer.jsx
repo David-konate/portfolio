@@ -4,7 +4,6 @@ import {
   Container,
   Stack,
   Toolbar,
-  Typography,
   useMediaQuery,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -13,18 +12,6 @@ import { Box } from "@mui/system";
 function Footer() {
   const navigate = useNavigate();
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
-
-  const handleMention = () => {
-    navigate("/legal-mentions");
-  };
-
-  const handleConf = () => {
-    navigate("/privacy-policy");
-  };
-
-  const handleRules = () => {
-    navigate("/rules");
-  };
 
   return (
     <Box

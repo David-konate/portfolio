@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Typography, Box, Grid, Hidden } from "@mui/material";
+import { Container, Typography, Box, Grid } from "@mui/material";
 import Game from "../components/game/Game";
 import { Helmet } from "react-helmet";
 

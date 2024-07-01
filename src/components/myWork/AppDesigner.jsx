@@ -5,7 +5,6 @@ import {
   Typography,
   Dialog,
   DialogContent,
-  DialogContentText,
   DialogTitle,
 } from "@mui/material";
 import Smat from "../cda/Smat";

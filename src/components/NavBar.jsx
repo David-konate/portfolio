@@ -20,7 +20,6 @@ import { links } from "../utils";
 const NavBar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const navigate = useNavigate();
 
   const handleDrawerOpen = () => {

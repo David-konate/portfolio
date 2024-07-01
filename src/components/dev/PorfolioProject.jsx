@@ -13,7 +13,6 @@ import MonPortrait from "../../assets/portfolio1.png";
 import EnCoursDeProjet from "../../assets/portfolio2.png";
 import TravailEnEquipe from "../../assets/portfolio3.png";
 import ReactLogo from "../../assets/react.jpg";
-import ReactSymp from "../../assets/symfony.jpg";
 
 const PortfolioProject = () => {
   const [fullScreenImage, setFullScreenImage] = useState(null);
