@@ -7,10 +7,13 @@ import {
   Stack,
   Card,
   Box,
+  Grid,
 } from "@mui/material";
 import BonnePlace1 from "../../assets/labonneplace1.png";
 import BonnePlace2 from "../../assets/labonneplace2.png";
 import BonnePlace3 from "../../assets/labonneplace3.png";
+import ReactLogo from "../../assets/react.jpg";
+import ReactSymp from "../../assets/symfony.jpg";
 
 const BonnePlaceProject = ({ open, onClose }) => {
   const [fullScreenImage, setFullScreenImage] = useState(null);
@@ -24,13 +27,13 @@ const BonnePlaceProject = ({ open, onClose }) => {
   };
 
   return (
-    <Box p={0} className="dialog-ball ">
+    <Box p={0} className="dialog-ball retro-theme">
       <DialogContent className="dialog-ball slide-in">
         <Typography className="title-project slide-in" variant="h3">
           LaBonnePlace : Plateforme de petites annonces en ligne
         </Typography>
 
-        <Card className="card-bonne-place " sx={{ marginTop: 4 }}>
+        <Card className="card-bonne-place" sx={{ marginTop: 4 }}>
           <Typography p={2} variant="body1">
             BonnePlace est une plateforme de petites annonces en ligne,
             similaire à Le Bon Coin. Ce projet a été réalisé dans le cadre de ma
@@ -90,9 +93,42 @@ const BonnePlaceProject = ({ open, onClose }) => {
             />
           </Stack>
         </Box>
+
+        {/* Section des technologies utilisées */}
+        <Box mt={5}>
+          <Typography variant="h4" gutterBottom>
+            Technologies utilisées
+          </Typography>
+          <Grid container spacing={2}>
+            <Grid item xs={6} sm={6} md={3}>
+              <CardMedia
+                component="img"
+                image={ReactLogo}
+                alt="Kotlin"
+                className="tech-logo"
+                style={{ width: 118.75, height: 80.5 }} // Utilisation des styles en ligne pour définir les dimensions
+              />
+              <Typography variant="body1" align="center">
+                Kotlin
+              </Typography>
+            </Grid>
+            <Grid item xs={6} sm={6} md={3}>
+              <CardMedia
+                component="img"
+                image={ReactSymp}
+                alt="Kotlin"
+                className="tech-logo"
+                style={{ width: 118.75, height: 80.5 }} // Utilisation des styles en ligne pour définir les dimensions
+              />
+              <Typography variant="body1" align="center">
+                Symphonie
+              </Typography>
+            </Grid>
+          </Grid>
+        </Box>
       </DialogContent>
 
-      {/* Dialog for full screen image */}
+      {/* Dialog pour l'image en plein écran */}
       <Dialog
         open={!!fullScreenImage}
         onClose={handleCloseFullScreenImage}
@@ -102,8 +138,8 @@ const BonnePlaceProject = ({ open, onClose }) => {
         <DialogContent>
           <img
             src={fullScreenImage}
-            alt="Full Screen"
-            style={{ width: "100%", height: "auto" }}
+            alt="Plein écran"
+            style={{ width: "400%", height: "auto" }}
           />
         </DialogContent>
       </Dialog>

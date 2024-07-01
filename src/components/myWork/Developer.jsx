@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import portfolioImage from "../../assets/portfolio2.png";
 import bonnePlaceImage from "../../assets/labonneplace2.png";
-import ballnConnectImage from "../../assets/ballnconnect3.jpg";
+import ballnConnectImage from "../../assets/image.png";
 import PortfolioProject from "../dev/PorfolioProject";
 import BonnePlaceProject from "../dev/BonnePlaceProject";
 import BallnConnectProject from "../dev/BallnConnectProject";
+import ABTaxi from "../../assets/abtaxi4.png";
 import {
   Box,
   Grid,
   Typography,
   Dialog,
   DialogContent,
-  DialogContentText,
   DialogTitle,
 } from "@mui/material";
+import ABTaxiProject from "../dev/ABTaxi";
 
 const Developer = () => {
   const [open, setOpen] = useState(false);
@@ -34,6 +35,11 @@ const Developer = () => {
       title: "BallnConnect",
       image: ballnConnectImage,
       component: BallnConnectProject,
+    },
+    {
+      title: "AB-Taxi",
+      image: ABTaxi,
+      component: ABTaxiProject,
     },
   ];
 

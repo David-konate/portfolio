@@ -7,10 +7,13 @@ import {
   Stack,
   Card,
   Box,
+  Grid,
 } from "@mui/material";
 import MonPortrait from "../../assets/portfolio1.png";
 import EnCoursDeProjet from "../../assets/portfolio2.png";
 import TravailEnEquipe from "../../assets/portfolio3.png";
+import ReactLogo from "../../assets/react.jpg";
+import ReactSymp from "../../assets/symfony.jpg";
 
 const PortfolioProject = () => {
   const [fullScreenImage, setFullScreenImage] = useState(null);
@@ -53,8 +56,12 @@ const PortfolioProject = () => {
           </ul>
         </Box>
 
-        {/* Container for the stack of images */}
-        <Box mt={5} p={1} style={{ overflowY: "hidden" }}>
+        <Box
+          className="image-exemple"
+          mt={5}
+          p={1}
+          style={{ overflowY: "hidden" }}
+        >
           <Stack direction="row" spacing={2} className="box-image-projet">
             <CardMedia
               component="img"
@@ -79,9 +86,27 @@ const PortfolioProject = () => {
             />
           </Stack>
         </Box>
+        <Box mt={5}>
+          <Typography variant="h4" gutterBottom>
+            Technologies utilisées
+          </Typography>
+          <Grid container spacing={2}>
+            <Grid item xs={6} sm={6} md={3}>
+              <CardMedia
+                component="img"
+                image={ReactLogo}
+                alt="Kotlin"
+                className="tech-logo"
+                style={{ width: 118.75, height: 80.5 }} // Utilisation des styles en ligne pour définir les dimensions
+              />
+              <Typography variant="body1" align="center">
+                Kotlin
+              </Typography>
+            </Grid>
+          </Grid>
+        </Box>
       </DialogContent>
 
-      {/* Dialog for full screen image */}
       <Dialog
         open={!!fullScreenImage}
         onClose={handleCloseFullScreenImage}

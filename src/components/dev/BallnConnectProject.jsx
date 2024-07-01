@@ -7,10 +7,12 @@ import {
   Card,
   Box,
   Dialog,
+  Grid,
 } from "@mui/material";
 import BallnConnect1 from "../../assets/ballnconnect1.jpg";
 import BallnConnect2 from "../../assets/ballnconnect2.jpg";
 import BallnConnect3 from "../../assets/ballnconnect3.jpg";
+import KotlinLogo from "../../assets/kotlin.webp"; // Add your Kotlin logo image path here
 
 const BallnConnectProject = () => {
   const [fullScreenImage, setFullScreenImage] = useState(null);
@@ -60,30 +62,36 @@ const BallnConnectProject = () => {
             </li>
           </ul>
         </Box>
-
-        <Stack mt={5} direction="row" spacing={2} className="box-image-projet2">
-          <CardMedia
-            component="img"
-            image={BallnConnect1}
-            alt="Page de visualisation des événements de BallnConnect"
-            className="image-projet"
-            onClick={() => handleImageClick(BallnConnect1)}
-          />
-          <CardMedia
-            component="img"
-            image={BallnConnect2}
-            alt="Terrain de basket avec informations"
-            className="image-projet"
-            onClick={() => handleImageClick(BallnConnect2)}
-          />
-          <CardMedia
-            component="img"
-            image={BallnConnect3}
-            alt="Terrain de basket avec informations"
-            className="image-projet"
-            onClick={() => handleImageClick(BallnConnect3)}
-          />
-        </Stack>
+        <Box mt={5} p={1} style={{ overflowY: "hidden" }}>
+          <Stack
+            mt={5}
+            direction="row"
+            spacing={2}
+            className="box-image-projet2"
+          >
+            <CardMedia
+              component="img"
+              image={BallnConnect1}
+              alt="Page de visualisation des événements de BallnConnect"
+              className="image-projet"
+              onClick={() => handleImageClick(BallnConnect1)}
+            />
+            <CardMedia
+              component="img"
+              image={BallnConnect2}
+              alt="Terrain de basket avec informations"
+              className="image-projet"
+              onClick={() => handleImageClick(BallnConnect2)}
+            />
+            <CardMedia
+              component="img"
+              image={BallnConnect3}
+              alt="Terrain de basket avec informations"
+              className="image-projet"
+              onClick={() => handleImageClick(BallnConnect3)}
+            />
+          </Stack>
+        </Box>
 
         <Typography
           className="custom-link"
@@ -99,6 +107,26 @@ const BallnConnectProject = () => {
             Visitez le site Web de BallnConnect
           </a>
         </Typography>
+
+        {/* New section presenting the technologies used */}
+        <Box mt={5}>
+          <Typography variant="h4" gutterBottom>
+            Technologies utilisées
+          </Typography>
+          <Grid container spacing={2}>
+            <Grid item xs={6} sm={6} md={3}>
+              <CardMedia
+                component="img"
+                image={KotlinLogo}
+                alt="Kotlin"
+                className="tech-logo"
+              />
+              <Typography variant="body1" align="center">
+                Kotlin
+              </Typography>
+            </Grid>
+          </Grid>
+        </Box>
       </DialogContent>
 
       {/* Dialog for full screen image */}

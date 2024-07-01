@@ -16,6 +16,7 @@ import reactImg from "../../assets/react.jpg";
 import laravelImg from "../../assets/laravel.png";
 import symfonyImg from "../../assets/symfony.jpg";
 import nodeImg from "../../assets/node.webp";
+import nextjsImg from "../../assets/next.jpg";
 
 const Frameworks = () => {
   const [open, setOpen] = useState(false);
@@ -37,6 +38,11 @@ const Frameworks = () => {
       src: reactImg,
       title: "React",
       text: "React est une bibliothèque JavaScript pour la création d'interfaces utilisateur web composables. Léger et flexible, il se concentre sur la gestion de l'état et la réutilisation des composants. Il ne fournit pas de structure d'application complète et s'appuie sur des bibliothèques tierces pour le routage, la gestion d'état et d'autres fonctionnalités. Il est populaire pour les interfaces utilisateur complexes et les applications web à page unique (SPA).",
+    },
+    {
+      src: nextjsImg,
+      title: "Next.js",
+      text: "Next.js est un framework React minimaliste pour le rendu côté serveur et le rendu statique des applications web. Il simplifie le développement d'applications web modernes en combinant React avec des fonctionnalités avancées comme le rendu côté serveur, le pré-rendu statique, et la gestion automatique de l'optimisation des performances. Next.js est particulièrement adapté aux applications nécessitant un SEO efficace et une meilleure performance.",
     },
     {
       src: laravelImg,

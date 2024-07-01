@@ -5,9 +5,10 @@ import {
   Typography,
   CardMedia,
   Stack,
-  Box,
-  Divider,
   Card,
+  Box,
+  Grid,
+  Divider,
 } from "@mui/material";
 import SmatDesign1 from "../../assets/cda1.png";
 import SmatDesign2 from "../../assets/cda2.png";
@@ -18,14 +19,17 @@ import SmatDesign6 from "../../assets/cda6.png";
 import SmatDev1 from "../../assets/smat1.png";
 import SmatDev2 from "../../assets/smat2.png";
 import SmatDev3 from "../../assets/smat3.png";
+import ReactLogo from "../../assets/react.jpg";
+import SymfonyLogo from "../../assets/symfony.jpg";
+import MaterialUILogo from "../../assets/material.png";
+import MySQLLogo from "../../assets/sql.avif";
+import EloqueLogo from "../../assets/eloquent.jpg";
 
 const Smat = ({ open, onClose }) => {
   const [fullScreenImage, setFullScreenImage] = useState(null);
-  const [dialogSize, setDialogSize] = useState("sm");
 
-  const handleImageClick = (image, size) => {
+  const handleImageClick = (image) => {
     setFullScreenImage(image);
-    setDialogSize(size);
   };
 
   const handleCloseFullScreenImage = () => {
@@ -34,11 +38,11 @@ const Smat = ({ open, onClose }) => {
 
   return (
     <Box p={0} className="dialog-ball">
-      <DialogContent className="dialog-ball slide-in">
-        <Typography className="title-project slide-in" variant="h3">
-          Smat Steps : Application de Quiz
-        </Typography>
+      <Typography className="title-project slide-in" variant="h3">
+        Smat Steps : Application de Quiz
+      </Typography>
 
+      <DialogContent className="dialog-ball slide-in">
         <Card className="card-smat" sx={{ marginTop: 4 }}>
           <Typography p={2} variant="body1">
             Smart Steps est une application de quiz conçue pour susciter
@@ -50,7 +54,7 @@ const Smat = ({ open, onClose }) => {
             vainqueur. <br />
             Entièrement sécurisée et nécessitant une confirmation par email,
             Smart Steps est développée à l'aide des technologies React et
-            Laravel. <br />
+            Symfony. <br />
             La création de l'application a impliqué le codage de tous les
             éléments, des migrations aux vues, en passant par les contrôleurs et
             la mise en place de divers fournisseurs.
@@ -83,42 +87,42 @@ const Smat = ({ open, onClose }) => {
               image={SmatDesign1}
               alt="Conception Image 1"
               className="image-projet"
-              onClick={() => handleImageClick(SmatDesign1, "md")}
+              onClick={() => handleImageClick(SmatDesign1)}
             />
             <CardMedia
               component="img"
               image={SmatDesign2}
               alt="Conception Image 2"
               className="image-projet"
-              onClick={() => handleImageClick(SmatDesign2, "md")}
+              onClick={() => handleImageClick(SmatDesign2)}
             />
             <CardMedia
               component="img"
               image={SmatDesign3}
               alt="Conception Image 3"
               className="image-projet"
-              onClick={() => handleImageClick(SmatDesign3, "md")}
+              onClick={() => handleImageClick(SmatDesign3)}
             />
             <CardMedia
               component="img"
               image={SmatDesign4}
               alt="Conception Image 4"
               className="image-projet"
-              onClick={() => handleImageClick(SmatDesign4, "md")}
+              onClick={() => handleImageClick(SmatDesign4)}
             />
             <CardMedia
               component="img"
               image={SmatDesign5}
               alt="Conception Image 5"
               className="image-projet"
-              onClick={() => handleImageClick(SmatDesign5, "md")}
+              onClick={() => handleImageClick(SmatDesign5)}
             />
             <CardMedia
               component="img"
               image={SmatDesign6}
               alt="Conception Image 6"
               className="image-projet"
-              onClick={() => handleImageClick(SmatDesign6, "md")}
+              onClick={() => handleImageClick(SmatDesign6)}
             />
           </Stack>
         </Box>
@@ -189,21 +193,21 @@ const Smat = ({ open, onClose }) => {
               image={SmatDev1}
               alt="Développement Image 1"
               className="image-projet"
-              onClick={() => handleImageClick(SmatDev1, "xl")}
+              onClick={() => handleImageClick(SmatDev1)}
             />
             <CardMedia
               component="img"
               image={SmatDev2}
               alt="Développement Image 2"
               className="image-projet"
-              onClick={() => handleImageClick(SmatDev2, "xl")}
+              onClick={() => handleImageClick(SmatDev2)}
             />
             <CardMedia
               component="img"
               image={SmatDev3}
               alt="Développement Image 3"
               className="image-projet"
-              onClick={() => handleImageClick(SmatDev3, "xl")}
+              onClick={() => handleImageClick(SmatDev3)}
             />
           </Stack>
         </Box>
@@ -221,6 +225,78 @@ const Smat = ({ open, onClose }) => {
             Visitez le site Web de Smat-Steps
           </a>
         </Typography>
+        <Box mt={5}>
+          <Typography variant="h4" gutterBottom>
+            Technologies utilisées
+          </Typography>
+          <Grid container spacing={2}>
+            {/* Kotlin */}
+            <Grid item xs={6} sm={6} md={3}>
+              <CardMedia
+                component="img"
+                image={ReactLogo}
+                alt="Kotlin"
+                className="tech-logo"
+                style={{ width: 118.75, height: 80.5 }}
+              />
+              <Typography variant="body1" align="center">
+                Kotlin
+              </Typography>
+            </Grid>
+            {/* Symfony */}
+            <Grid item xs={6} sm={6} md={3}>
+              <CardMedia
+                component="img"
+                image={SymfonyLogo}
+                alt="Symfony"
+                className="tech-logo"
+                style={{ width: 118.75, height: 80.5 }}
+              />
+              <Typography variant="body1" align="center">
+                Symfony
+              </Typography>
+            </Grid>
+            {/* Material UI */}
+            <Grid item xs={6} sm={6} md={3}>
+              <CardMedia
+                component="img"
+                image={MaterialUILogo}
+                alt="Material UI"
+                className="tech-logo"
+                style={{ width: 118.75, height: 80.5 }}
+              />
+              <Typography variant="body1" align="center">
+                Material UI
+              </Typography>
+            </Grid>
+            {/* MySQL */}
+            <Grid item xs={6} sm={6} md={3}>
+              <CardMedia
+                component="img"
+                image={MySQLLogo}
+                alt="MySQL"
+                className="tech-logo"
+                style={{ width: 118.75, height: 80.5 }}
+              />
+              <Typography variant="body1" align="center">
+                MySQL
+              </Typography>
+            </Grid>
+            {/* Eloque */}
+            <Grid item xs={6} sm={6} md={3}>
+              <CardMedia
+                component="img"
+                image={EloqueLogo}
+                alt="Eloque"
+                className="tech-logo"
+                style={{ width: 118.75, height: 80.5 }}
+              />
+              <Typography variant="body1" align="center">
+                Eloquent
+              </Typography>
+            </Grid>
+          </Grid>
+        </Box>
       </DialogContent>
 
       {/* Dialog for full screen image */}
@@ -228,13 +304,15 @@ const Smat = ({ open, onClose }) => {
         open={!!fullScreenImage}
         onClose={handleCloseFullScreenImage}
         fullWidth
-        maxWidth={dialogSize}
+        maxWidth="xl"
       >
-        <img
-          src={fullScreenImage}
-          alt="Full Screen"
-          style={{ width: "100%", height: "auto" }}
-        />
+        <DialogContent>
+          <img
+            src={fullScreenImage}
+            alt="Full Screen"
+            style={{ width: "100%", height: "auto" }}
+          />
+        </DialogContent>
       </Dialog>
     </Box>
   );
