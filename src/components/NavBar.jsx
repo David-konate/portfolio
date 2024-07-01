@@ -69,9 +69,7 @@ const NavBar = () => {
                     borderRadius: 5,
                     textDecoration: "none",
                   }}
-                  className={({ isActive }) =>
-                    isActive ? "navbar_link active" : "navbar_link"
-                  }
+                  className="navbar_link"
                   key={link.label}
                   to={link.path}
                 >
@@ -110,9 +108,8 @@ const NavBar = () => {
             >
               <NavLink
                 to={link.path}
-                className={({ isActive }) =>
-                  isActive ? "drawer-link selected" : "drawer-link"
-                }
+                className="drawer-link"
+                activeClassName="selected"
               >
                 <ListItemText
                   sx={{ padding: 1 }}

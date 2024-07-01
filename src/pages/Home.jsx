@@ -37,7 +37,7 @@ Découvrez mes réalisations, mes compétences et mon expertise dans la créatio
         spacing={4}
         alignItems="center"
         justifyContent="space-between"
-        height="100vh"
+        style={{ minHeight: "100vh" }}
       >
         <Grid item xs={12} md={6} className="left-text">
           <Typography className="typing-animation">
@@ -46,10 +46,10 @@ Découvrez mes réalisations, mes compétences et mon expertise dans la créatio
           <Typography variant="h2" className="typing-animation">
             David Konaté
           </Typography>
-          <Typography className="title-chevron typing-animation" variant="h4">
-            {" "}
+          <Typography className="flex flex-col items-start" variant="h4">
             &gt; Développeur Full-Stack
           </Typography>
+
           <Typography mt={5} className="comment typing-animation">
             // Retrouvez ci-dessous mon GitHub
           </Typography>
@@ -103,13 +103,11 @@ Découvrez mes réalisations, mes compétences et mon expertise dans la créatio
             https://www.linkedin.com/in/david-konaté-670172194/
           </Typography>
         </Grid>
-        <Hidden>
-          <Grid item xs={12} md={6} className="right-game" textAlign="center">
-            <Box display={{ xs: "none", md: "block" }}>
-              <Game />
-            </Box>
-          </Grid>
-        </Hidden>
+        <Grid item xs={12} md={6} className="right-game" textAlign="center">
+          <Box display={{ xs: "block", md: "block" }}>
+            <Game />
+          </Box>
+        </Grid>
       </Grid>
     </Container>
   );

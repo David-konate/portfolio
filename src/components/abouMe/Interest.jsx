@@ -41,12 +41,12 @@ const Interest = () => {
     },
     {
       src: histoire,
-      title: "Culture et histoire",
+      title: "Culture/Histoire",
       text: `Fasciné par les civilisations anciennes, je plonge dans l'histoire depuis mon plus jeune âge. De l'Antiquité à la fin de la Renaissance, j'explore les vestiges du passé à travers les visites de musées comme le Louvre, la découverte de châteaux historiques et l'étude des mythologies égyptiennes, romaines, grecques et nordiques.\n\nCette passion pour l'histoire nourrit mon approche du métier de développeur. Les leçons tirées du passé sur la créativité humaine, la résolution de problèmes et l'adaptation aux changements m'inspirent à construire des applications qui respectent l'héritage culturel et les valeurs humaines. L'histoire me rappelle que l'innovation ne se fait jamais dans le vide, mais toujours en dialogue avec le passé.`,
     },
     {
       src: innovation,
-      title: "Technologie et innovation",
+      title: "Techno/Innovation",
       text: `Amoureux de la musique depuis mon enfance, j'explore les rythmes et les mélodies du monde entier. Du rap US et français des années 2000 au reggae et au dancehall, en passant par le jazz, le blues et les instruments tels que le violon, le saxophone et le piano, la musique nourrit mon âme et enrichit ma vie.\n\nCette passion pour la musique se retrouve dans mon métier de développeur, où je m'inspire des émotions et des rythmes pour créer des expériences utilisateur immersives. L'intégration de musiques adaptées aux ambiances et la conception d'interfaces qui répondent aux émotions des utilisateurs sont autant de domaines où mon amour pour la musique me permet d'apporter une touche unique et vibrante aux applications que je développe.`,
     },
     {
