@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /about/
+Allow: /blog/
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /*.js$
+Disallow: /*.json$
+Sitemap: https://www.david-konate.fr/sitemap.xml

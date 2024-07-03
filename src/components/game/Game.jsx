@@ -33,19 +33,27 @@ const Game = () => {
       if (gameStarted) {
         switch (e.keyCode) {
           case 38:
-            if (direction !== "DOWN") setDirection("UP");
+            setDirection((prevDirection) =>
+              prevDirection !== "DOWN" ? "UP" : prevDirection
+            );
             setPressedKey("UP");
             break;
           case 40:
-            if (direction !== "UP") setDirection("DOWN");
+            setDirection((prevDirection) =>
+              prevDirection !== "UP" ? "DOWN" : prevDirection
+            );
             setPressedKey("DOWN");
             break;
           case 37:
-            if (direction !== "RIGHT") setDirection("LEFT");
+            setDirection((prevDirection) =>
+              prevDirection !== "RIGHT" ? "LEFT" : prevDirection
+            );
             setPressedKey("LEFT");
             break;
           case 39:
-            if (direction !== "LEFT") setDirection("RIGHT");
+            setDirection((prevDirection) =>
+              prevDirection !== "LEFT" ? "RIGHT" : prevDirection
+            );
             setPressedKey("RIGHT");
             break;
           default:
@@ -56,39 +64,41 @@ const Game = () => {
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [gameStarted, direction]);
+  }, [gameStarted]);
 
   useEffect(() => {
     if (gameStarted) {
       const moveSnake = () => {
-        let dots = [...snakeDots];
-        let head = [...dots[dots.length - 1]];
+        setSnakeDots((prevSnakeDots) => {
+          let dots = [...prevSnakeDots];
+          let head = [...dots[dots.length - 1]];
 
-        switch (direction) {
-          case "RIGHT":
-            head = [head[0] + 10, head[1]];
-            break;
-          case "LEFT":
-            head = [head[0] - 10, head[1]];
-            break;
-          case "DOWN":
-            head = [head[0], head[1] + 10];
-            break;
-          case "UP":
-            head = [head[0], head[1] - 10];
-            break;
-          default:
-            break;
-        }
+          switch (direction) {
+            case "RIGHT":
+              head = [head[0] + 10, head[1]];
+              break;
+            case "LEFT":
+              head = [head[0] - 10, head[1]];
+              break;
+            case "DOWN":
+              head = [head[0], head[1] + 10];
+              break;
+            case "UP":
+              head = [head[0], head[1] - 10];
+              break;
+            default:
+              break;
+          }
 
-        dots.push(head);
-        dots.shift();
-        setSnakeDots(dots);
+          dots.push(head);
+          dots.shift();
+          return dots;
+        });
       };
 
       const checkIfOutOfBorders = () => {
         let head = snakeDots[snakeDots.length - 1];
-        if (head[0] >= 300 || head[1] >= 300 || head[0] < 0 || head[1] < 0) {
+        if (head[0] >= 230 || head[1] >= 230 || head[0] < 0 || head[1] < 0) {
           onGameOver();
         }
       };
@@ -114,20 +124,19 @@ const Game = () => {
       };
 
       const enlargeSnake = () => {
-        let newSnake = [...snakeDots];
-        newSnake.unshift([]);
-        setSnakeDots(newSnake);
+        setSnakeDots((prevSnakeDots) => {
+          let newSnake = [...prevSnakeDots];
+          newSnake.unshift([]);
+          return newSnake;
+        });
       };
 
       const increaseSpeed = () => {
-        if (speed > 20) {
-          setSpeed(speed - 20);
-        }
+        setSpeed((prevSpeed) => (prevSpeed > 20 ? prevSpeed - 20 : prevSpeed));
       };
 
       const onGameOver = () => {
         setGameOver(true);
-        // Ne réinitialise pas le snakeDots ici
         setFood(getRandomCoordinates());
         setDirection("RIGHT");
         setSpeed(250);
@@ -146,7 +155,6 @@ const Game = () => {
   }, [gameStarted, snakeDots, direction, food, speed]);
 
   const startGame = () => {
-    // Réinitialisation des états
     setSnakeDots(initialSnake);
     setFood(getRandomCoordinates());
     setDirection("RIGHT");
@@ -156,7 +164,15 @@ const Game = () => {
   };
 
   const handleDirectionChange = (newDirection) => {
-    setDirection(newDirection);
+    if (
+      (newDirection === "UP" && direction !== "DOWN") ||
+      (newDirection === "DOWN" && direction !== "UP") ||
+      (newDirection === "LEFT" && direction !== "RIGHT") ||
+      (newDirection === "RIGHT" && direction !== "LEFT")
+    ) {
+      setDirection(newDirection);
+      setPressedKey(newDirection);
+    }
   };
 
   return (
@@ -167,15 +183,15 @@ const Game = () => {
             className="plateau"
             sx={{
               position: "relative",
-              width: "300px",
-              height: "300px",
+              width: "230px",
+              height: "230px",
               border: "2px solid #000",
               margin: "0 auto",
               backgroundColor: "#FFF",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              justifyContent: "flex-start", // Aligner le contenu en haut
+              justifyContent: "flex-start",
             }}
           >
             <Box mt={5} textAlign="center">
@@ -185,7 +201,7 @@ const Game = () => {
                 onClick={startGame}
                 disabled={gameStarted}
                 sx={{
-                  display: gameStarted ? "none" : "block", // Condition pour cacher le bouton
+                  display: gameStarted ? "none" : "block",
                   background:
                     "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
                   border: 0,
@@ -204,7 +220,7 @@ const Game = () => {
                   },
                 }}
               >
-                Commencer une partie
+                Nouvelle partie
               </Button>
 
               {gameOver && (
@@ -265,7 +281,7 @@ const Game = () => {
                   color: "var(--theme-secondary-color)",
                   filter: pressedKey === "UP" ? "brightness(70%)" : "none",
                   boxShadow: pressedKey === "UP" ? "0px 0px 8px white" : "none",
-                  transition: "background-color 0.3s ease", // Ajout de la transition CSS
+                  transition: "background-color 0.3s ease",
                 }}
                 style={{
                   background:
@@ -297,7 +313,7 @@ const Game = () => {
                     filter: pressedKey === "LEFT" ? "brightness(70%)" : "none",
                     boxShadow:
                       pressedKey === "LEFT" ? "0px 0px 8px white" : "none",
-                    transition: "background-color 0.3s ease", // Ajout de la transition CSS
+                    transition: "background-color 0.3s ease",
                   }}
                   style={{
                     background:
@@ -320,7 +336,7 @@ const Game = () => {
                     filter: pressedKey === "DOWN" ? "brightness(70%)" : "none",
                     boxShadow:
                       pressedKey === "DOWN" ? "0px 0px 8px white" : "none",
-                    transition: "background-color 0.3s ease", // Ajout de la transition CSS
+                    transition: "background-color 0.3s ease",
                   }}
                   style={{
                     background:
@@ -344,7 +360,7 @@ const Game = () => {
                     filter: pressedKey === "RIGHT" ? "brightness(70%)" : "none",
                     boxShadow:
                       pressedKey === "RIGHT" ? "0px 0px 8px white" : "none",
-                    transition: "background-color 0.3s ease", // Ajout de la transition CSS
+                    transition: "background-color 0.3s ease",
                   }}
                   style={{
                     background:
