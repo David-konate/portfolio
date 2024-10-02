@@ -26,7 +26,7 @@ const AppDesigner = () => {
       component: Smat,
     },
     {
-      title: "TeamAgenda",
+      title: "TeamCalenda",
       image: agendaImage,
       component: Agenda,
     },

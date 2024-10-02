@@ -41,13 +41,13 @@ const Smat = ({ open, onClose }) => {
   return (
     <Box p={0} className="dialog-ball">
       <Typography className="title-project slide-in" variant="h3">
-        TeamCalanda : Gestion Collaborative des Agendas
+        TeamCalenda : Gestion Collaborative des Agendas
       </Typography>
 
       <DialogContent className="dialog-ball slide-in">
         <Card className="card-smat" sx={{ marginTop: 4 }}>
           <Typography p={2} variant="body1">
-            TeamCalanda est une application innovante conçue pour faciliter le
+            TeamCalenda est une application innovante conçue pour faciliter le
             partage intuitif des sessions d'agenda entre différents
             utilisateurs. <br />
             Elle permet à chaque utilisateur d'inviter n'importe qui possédant
@@ -62,7 +62,7 @@ const Smat = ({ open, onClose }) => {
             ou en cours. <br />
             Chaque session partage également un système de messagerie intégré,
             permettant aux utilisateurs d'échanger des informations <br />
-            TeamCalanda allie simplicité et efficacité, offrant une solution
+            TeamCalenda allie simplicité et efficacité, offrant une solution
             complète pour la gestion des agendas collaboratifs, <br />
             où chaque utilisateur peut facilement s'organiser et communiquer
             avec ses pairs.
