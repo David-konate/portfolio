@@ -108,7 +108,7 @@ const ABTaxiProject = () => {
           align="center"
         >
           <a
-            href="https://ab-taxi-678a4bx7m-david-konates-projects.vercel.app/"
+            href="https://www.abtaxiservice77.fr/"
             target="_blank"
             className="custom-link"
           >

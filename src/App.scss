@@ -107,6 +107,46 @@ li {
   font-size: 0.875rem;
 }
 
+.legal-notice {
+  text-align: center;
+  padding: 50px;
+  background-color: transparent;
+  border-radius: 8px;
+  margin: auto;
+
+  h2 {
+    color: var(--theme-primary-color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .list-item {
+    margin-top: 20px;
+    padding: auto;
+    margin-bottom: 20px;
+    margin: auto;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .primary-text {
+      padding: auto;
+      font-weight: bold;
+      color: var(--theme-secondary-color);
+      margin: auto;
+    }
+
+    .secondary-text {
+      padding: auto;
+      color: var(--theme-text-color);
+      margin-top: 5px;
+      margin: auto;
+    }
+  }
+}
+
 .MuiListItemText-root p {
   font-size: 0.875rem;
 }

@@ -9,9 +9,10 @@ import {
 } from "@mui/material";
 import Smat from "../cda/Smat";
 import YoungBoss from "../cda/YounBoss";
+import Agenda from "../cda/Agenda";
 import smat2Image from "../../assets/smat2.png";
 import undr1Image from "../../assets/undr2.png";
-
+import agendaImage from "../../assets/agenda8.png";
 const AppDesigner = () => {
   // État pour gérer l'ouverture et la sélection du projet
   const [open, setOpen] = useState(false);
@@ -23,6 +24,11 @@ const AppDesigner = () => {
       title: "Smat",
       image: smat2Image,
       component: Smat,
+    },
+    {
+      title: "TeamAgenda",
+      image: agendaImage,
+      component: Agenda,
     },
     {
       title: "Young Boss",
